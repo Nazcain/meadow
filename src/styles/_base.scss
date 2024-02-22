@@ -22,10 +22,6 @@ $link-color: #48752f;
   }
 }
 
-* {
-  filter: grayscale(1);
-}
-
 body {
   background-color: var(--background-color);
   font-weight: var(--base-font-weight);
