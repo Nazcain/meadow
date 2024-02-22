@@ -1,0 +1,142 @@
+// Modules
+@import "../../node_modules/include-media/dist/_include-media.scss";
+
+// Base
+@import "media-queries";
+@import "reset";
+@import "fonts";
+@import "base";
+@import "typography";
+@import "layout";
+
+// Components
+@import "components/footer";
+
+:root {
+  --column-gap: 25px;
+}
+
+body {
+  padding: 40px 0 0;
+}
+
+.header {
+  margin-bottom: 48px;
+}
+
+.header-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-logo {
+  width: 50px;
+}
+
+.header-title {
+  margin-top: -12px;
+  font-weight: 600;
+  font-size: 40px;
+}
+
+.columns {
+  display: grid;
+  gap: var(--column-gap);
+  margin-bottom: 60px;
+
+  &.-two {
+    grid-template-columns: 65.8% auto;
+  }
+
+  &.-three {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.box {
+  padding: 30px;
+  // background-color: #edefe7;
+  background-color: #f1eee7;
+  // border: 1px solid #e5e2da;
+  border-radius: 10px;
+  // box-shadow: 0 6px 10px rgba(#000, 0.02);
+
+  &.-white {
+    background-color: #fff;
+    border: 1px solid #e5e2da;
+  }
+
+  &.-transparent {
+    background: none;
+    border: 1px solid #e5e2da;
+    // box-shadow: none;
+  }
+
+  &:not(:last-child) {
+    margin-bottom: var(--column-gap);
+  }
+}
+
+.box .columns {
+  margin-bottom: 0;
+}
+
+.box .box,
+.columns.-three .box {
+  margin-bottom: 0;
+}
+
+.box-title {
+  opacity: 0.75;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-bottom: calc(var(--base-line-height) * 1em);
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+.box a:not([class]) i {
+  text-decoration-color: #f1eee7;
+}
+
+.box.-transparent a:not([class]) i {
+  text-decoration-color: #f8f6f1;
+}
+
+.box.-white a:not([class]) i {
+  text-decoration-color: #fff;
+}
+
+.post {
+  margin: 0 -30px;
+  padding: 0 30px;
+
+  &:not(:first-child) {
+    padding-top: 30px;
+  }
+
+  &:not(:last-child) {
+    padding-bottom: 30px;
+    border-bottom: 1px solid #e5e2da;
+  }
+}
+
+.post-meta {
+  opacity: 0.5;
+  margin-bottom: 0;
+  // font-size: 14px;
+}
+
+.post-title {
+  margin-bottom: 0.3em;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.post-excerpt {
+  margin-bottom: 0;
+}
+
+.post-read {
+}

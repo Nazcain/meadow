@@ -1,0 +1,44 @@
+$link-color: #48752f;
+
+:root {
+  --black: #000;
+  --white: #fff;
+  --x-light-orange: #f8f6f1;
+  --x-dark-orange: #43413d;
+  --background-color: var(--x-light-orange);
+  --text-color: var(--x-dark-orange);
+
+  // Typography
+  --base-font-weight: 400;
+  --base-font-size: 16px;
+  --base-line-height: 1.5;
+  --primary-font: "InterVariable", georgia, "Inter", sans-serif;
+
+  // Layout
+  --container-width: 1000px;
+  --side-padding: 80px;
+
+  @include media(">=tablet") {
+  }
+}
+
+body {
+  background-color: var(--background-color);
+  font-weight: var(--base-font-weight);
+  font-size: var(--base-font-size);
+  line-height: var(--base-line-height);
+  font-family: var(--primary-font);
+  font-optical-sizing: auto;
+  color: var(--text-color);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: default;
+  // -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation; // disable double-tap zoom
+  // overscroll-behavior: none;
+}
+
+::selection {
+  background: var(--text-color);
+  color: var(--background-color);
+}

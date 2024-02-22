@@ -1,16 +1,157 @@
 ---
+import "@styles/main.scss"
 
+const posts = [
+  {
+    title: "Introducing Meadow",
+    date: "March 18, 2024",
+    author: "Joanna Rutkowska",
+    excerpt: "Praesent maximus risus quam, id bibendum tortor ultrices nec.",
+  },
+  {
+    title: "Using Meadow with Obsidian",
+    date: "March 16, 2024",
+    author: "Joanna Rutkowska",
+    excerpt:
+      "Sed sit amet aliquam erat, et imperdiet risus. Phasellus ante elit.",
+  },
+  {
+    title: "Pellentesque nisi quam ullamcorper",
+    date: "March 12, 2024",
+    author: "Marcin Stachyra",
+    excerpt: "Phasellus ante elit, vehicula a ligula id.",
+  },
+]
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/images/logo.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Meadow</title>
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <a class="header-link" href="/">
+          <img class="header-logo" src="/images/logo.svg" />
+          <h1 class="header-title">Meadow</h1>
+        </a>
+      </header>
+      <div class="columns -two">
+        <div class="column">
+          {
+            posts.map(({ title, date, author, excerpt }) => (
+              <div class="box -transparent">
+                <p class="box-title">
+                  {date} – {author}
+                </p>
+                <h3 class="post-title">{title}</h3>
+                <p class="post-excerpt">{excerpt}</p>
+                <p class="post-read">
+                  <a href="#">
+                    Read more<i> →</i>
+                  </a>
+                </p>
+              </div>
+            ))
+          }
+          <!-- <section class="box -white">
+            <h2 class="box-title">About</h2>
+            <p>
+              Meadow is designed to enhance cognitive abilities by providing a
+              robust system for organizing diverse information surrounding a
+              particular topic. <a href="#">Learn more<i> →</i></a>
+            </p>
+          </section> -->
+        </div>
+        <div class="column">
+          <section class="box">
+            <h2 class="box-title">About</h2>
+            <p>
+              Meadow is designed to enhance cognitive abilities by providing a
+              robust system for organizing diverse information surrounding a
+              particular topic. <a href="#">Learn more<i> →</i></a>
+            </p>
+          </section>
+          <section class="box">
+            <h2 class="box-title">Download</h2>
+          </section>
+          <section class="box">
+            <h2 class="box-title">Screenshots</h2>
+          </section>
+        </div>
+      </div>
+      <!-- <section class="box -transparent">
+        <h2 class="box-title">Documentation</h2>
+        <div class="columns -three">
+          <section class="box">
+            <h2 class="box-title">Quick start guide</h2>
+            <p>
+              <a href="#">Get started using Meadow<i> →</i></a>
+            </p>
+          </section>
+          <section class="box">
+            <h2 class="box-title">User docs</h2>
+            <p>
+              <a href="#">Read user docs<i> →</i></a>
+            </p>
+          </section>
+          <section class="box">
+            <h2 class="box-title">Developer docs</h2>
+            <p>
+              <a href="#">Read developer docs<i> →</i></a>
+            </p>
+          </section>
+        </div>
+      </section> -->
+      <div class="columns -three">
+        <section class="box -transparent">
+          <h2 class="box-title">Quick start guide</h2>
+          <p>
+            <a href="#">Get started using Meadow<i> →</i></a>
+          </p>
+        </section>
+        <section class="box -transparent">
+          <h2 class="box-title">User docs</h2>
+          <p>
+            <a href="#">Read user docs<i> →</i></a>
+          </p>
+        </section>
+        <section class="box -transparent">
+          <h2 class="box-title">Developer docs</h2>
+          <p>
+            <a href="#">Read developer docs<i> →</i></a>
+          </p>
+        </section>
+      </div>
+    </div>
+    <footer class="footer">
+      <ul class="footer-menu">
+        <li class="footer-menu-item">
+          <a class="footer-menu-link" href="#">Home</a>
+        </li>
+        <li class="footer-menu-item">
+          <a class="footer-menu-link" href="#">About</a>
+        </li>
+        <li class="footer-menu-item">
+          <a class="footer-menu-link" href="#">Blog</a>
+        </li>
+      </ul>
+      <ul class="footer-menu">
+        <li class="footer-menu-item">
+          <a class="footer-menu-link" href="#">Quick start guide</a>
+        </li>
+        <li class="footer-menu-item">
+          <a class="footer-menu-link" href="#">User docs</a>
+        </li>
+        <li class="footer-menu-item">
+          <a class="footer-menu-link" href="#">Developer docs</a>
+        </li>
+      </ul>
+      <p class="footer-copyright">© 2024 Golem Foundation, Zug, Switzerland</p>
+    </footer>
+  </body>
 </html>

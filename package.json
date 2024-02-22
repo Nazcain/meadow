@@ -10,6 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^4.4.1"
+    "astro": "^4.4.1",
+    "autoprefixer": "^10.4.17",
+    "include-media": "^2.0.0",
+    "sass": "^1.71.1"
   }
 }

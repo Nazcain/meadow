@@ -1,0 +1,29 @@
+p,
+ol,
+ul {
+  &:where(:not(:last-child)) {
+    margin-bottom: calc(var(--base-line-height) * 1em);
+  }
+}
+
+a:not([class]) {
+  // font-weight: 500;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-decoration-color: rgba($link-color, 0.25);
+  text-underline-offset: 5px;
+  color: $link-color;
+  transition: text-decoration-color 0.15s;
+
+  i {
+    // opacity: 0.5;
+    // font-weight: 200;
+    font-style: inherit;
+    text-decoration: inherit;
+    color: rgba($link-color, 0.5);
+  }
+
+  &:hover {
+    text-decoration-color: rgba($link-color, 0.5);
+  }
+}

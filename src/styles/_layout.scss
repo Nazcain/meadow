@@ -1,0 +1,7 @@
+.container {
+  max-width: calc(var(--container-width) + var(--side-padding) * 2);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--side-padding);
+  padding-right: var(--side-padding);
+}
