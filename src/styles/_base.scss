@@ -1,12 +1,13 @@
-$link-color: #48752f;
+$text-color: #333;
+$link-color: #227223;
 
 :root {
   --black: #000;
   --white: #fff;
   --x-light-orange: #f8f6f1;
   --x-dark-orange: #43413d;
-  --background-color: var(--x-light-orange);
-  --text-color: var(--x-dark-orange);
+  --background-color: var(--white);
+  --text-color: #333;
 
   // Typography
   --base-font-weight: 400;
