@@ -11,9 +11,6 @@ dependencies:
   autoprefixer:
     specifier: ^10.4.17
     version: 10.4.17(postcss@8.4.35)
-  include-media:
-    specifier: ^2.0.0
-    version: 2.0.0
   sass:
     specifier: ^1.71.1
     version: 1.71.1
@@ -1672,10 +1669,6 @@ packages:
 
   /import-meta-resolve@4.0.0:
     resolution: {integrity: sha512-okYUR7ZQPH+efeuMJGlq4f8ubUgO50kByRPyt/Cy1Io4PSRsPjxME+YlVaCOx+NIToW7hCsZNFJyTPFFKepRSA==}
-    dev: false
-
-  /include-media@2.0.0:
-    resolution: {integrity: sha512-LSJcffPYIZ/Kln0rIi5UhqQbZxElDCMYA4dPC5MI1rkwwjptgEiOicHnzB0MMhMNJver0+4zULb4MKlgDyapZg==}
     dev: false
 
   /inherits@2.0.4:

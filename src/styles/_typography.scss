@@ -8,23 +8,32 @@ ul {
 
 a:not([class]),
 .link {
+  --icon-padding: 1.2em;
+  margin-right: calc(var(--icon-padding) + 0.2em);
   // font-weight: 500;
+  position: relative;
   text-decoration: underline;
   text-decoration-thickness: 1px;
-  text-decoration-color: rgba($link-color, 0.25);
+  text-decoration-color: rgba(#000, 0.15);
   text-underline-offset: 5px;
-  color: $link-color;
+  color: var(--link-color);
   transition: text-decoration-color 0.15s;
 
   i {
-    // opacity: 0.5;
-    // font-weight: 200;
+    position: absolute;
+    top: -0.1em;
+    right: calc(var(--icon-padding) * -1);
     font-style: inherit;
-    text-decoration: inherit;
-    color: rgba($link-color, 0.5);
+    color: rgba(#000, 0.3);
+    transition: color 0.15s;
   }
 
-  &:hover {
-    text-decoration-color: rgba($link-color, 0.5);
+  &:hover,
+  a:hover & {
+    text-decoration-color: rgba(var(--link-color-rgb), 0.5);
+
+    i {
+      color: var(--link-color);
+    }
   }
 }

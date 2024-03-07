@@ -1,0 +1,13 @@
+---
+import Container from "@components/Container/Container.astro"
+import styles from "./Header.module.scss"
+---
+
+<header class={styles.el}>
+  <Container>
+    <a class={styles.link} href="/">
+      <img class={styles.logo} src="/images/logo.svg" />
+      <h1 class={styles.title}>Meadow</h1>
+    </a>
+  </Container>
+</header>

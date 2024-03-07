@@ -1,0 +1,21 @@
+@import "@styles/shared";
+
+.el {
+  margin-bottom: 48px;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.logo {
+  width: 50px;
+}
+
+.title {
+  margin-top: -12px;
+  font-weight: 600;
+  font-size: 40px;
+}

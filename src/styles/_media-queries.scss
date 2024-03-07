@@ -1,8 +1,0 @@
-// include-media config
-// https://eduardoboucas.github.io/include-media/documentation/
-$media-expressions: (
-  ">=tablet":
-    "(min-width: 1024px), (min-width: 768px) and (orientation: portrait)",
-  "<tablet":
-    "(max-width: 767px), (max-width: 1023px) and (orientation: landscape)",
-);

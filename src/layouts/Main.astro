@@ -1,0 +1,25 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Header from "@components/Header/Header.astro"
+import Footer from "@components/Footer/Footer.astro"
+import Container from "@components/Container/Container.astro"
+import styles from "./Layout.module.scss"
+
+const { title } = Astro.props
+---
+
+<Layout title={title}>
+  <Header />
+  <Container>
+    <div class={styles.columns}>
+      <div class={styles.column}>
+        <slot name="main" />
+      </div>
+      <div class={styles.column}>
+        <slot name="sidebar" />
+      </div>
+    </div>
+    <slot />
+  </Container>
+  <Footer />
+</Layout>

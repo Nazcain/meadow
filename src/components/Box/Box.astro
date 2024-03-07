@@ -1,0 +1,14 @@
+---
+import styles from "./Box.module.scss"
+
+const { as = "section", type = "regular", href, title } = Astro.props
+let Element = as
+if (href) {
+  Element = "a"
+}
+---
+
+<Element class:list={[styles.el, styles[`el_${type}`]]} href={href}>
+  {title && <h2 class={styles.title}>{title}</h2>}
+  <slot />
+</Element>

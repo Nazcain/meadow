@@ -1,0 +1,19 @@
+@import "@styles/shared";
+
+.el {
+  display: flex;
+  gap: 8px;
+  padding-top: 10px;
+}
+
+.link {
+  transition: opacity 0.15s;
+
+  &:not(:hover) {
+    // opacity: 0.9;
+  }
+
+  &:hover {
+    opacity: 0.9;
+  }
+}

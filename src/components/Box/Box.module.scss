@@ -1,0 +1,39 @@
+@import "@styles/shared";
+
+.el {
+  margin-bottom: 20px;
+  padding: 30px;
+  border-radius: 10px;
+  transition: 0.15s;
+  transition-property: background-color, color;
+
+  &_regular {
+    --bg-color: rgba(0, 0, 0, 0.04);
+    --hover-bg-color: rgba(0, 0, 0, 0.08);
+    background-color: var(--bg-color);
+  }
+
+  &_plain {
+    --hover-bg-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &:not(:last-child) {
+  }
+}
+
+a.el {
+  display: block;
+
+  &:hover {
+    background-color: var(--hover-bg-color);
+  }
+}
+
+.title {
+  margin-bottom: calc(var(--base-line-height) * 1em);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(#000, 0.6);
+}

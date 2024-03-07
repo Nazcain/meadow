@@ -1,0 +1,46 @@
+@import "@styles/shared";
+
+.title {
+  margin-top: -0.1em;
+  margin-bottom: 0.8em;
+  font-weight: 700;
+  font-size: 20px;
+
+  i {
+    opacity: 0;
+    margin-left: 0.3em;
+    position: relative;
+    top: -0.07em;
+    font-weight: var(--base-font-weight);
+    font-style: inherit;
+    font-size: var(--base-font-size);
+    color: rgba(#000, 0.3);
+    transition: opacity 0.15s;
+
+    a:hover & {
+      opacity: 1;
+    }
+  }
+}
+
+.excerpt {
+  margin-bottom: 1.3em;
+}
+
+.meta {
+  display: flex;
+  gap: 1em;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(#000, 0.6);
+
+  i {
+    width: 1px;
+    height: 1.5em;
+    margin-top: -0.05em;
+    background-color: rgba(#000, 0.2);
+  }
+}

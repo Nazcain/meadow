@@ -1,0 +1,32 @@
+---
+import Container from "@components/Container/Container.astro"
+import styles from "./Footer.module.scss"
+---
+
+<footer class={styles.el}>
+  <Container>
+    <ul class={styles.menu}>
+      <li>
+        <a class={styles.menuLink} href="#">Home</a>
+      </li>
+      <li>
+        <a class={styles.menuLink} href="#">About</a>
+      </li>
+      <li>
+        <a class={styles.menuLink} href="#">Blog</a>
+      </li>
+    </ul>
+    <ul class={styles.menu}>
+      <li>
+        <a class={styles.menuLink} href="#">Quick start guide</a>
+      </li>
+      <li>
+        <a class={styles.menuLink} href="#">User docs</a>
+      </li>
+      <li>
+        <a class={styles.menuLink} href="#">Developer docs</a>
+      </li>
+    </ul>
+    <p class={styles.copyright}>© 2024 Golem Foundation, Zug, Switzerland</p>
+  </Container>
+</footer>

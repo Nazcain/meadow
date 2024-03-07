@@ -1,0 +1,29 @@
+@import "@styles/shared";
+
+.el {
+  margin-top: 90px;
+  padding: 60px 0;
+  // background-color: #f1eee7;
+  border-top: 1px solid rgba(#000, 0.1);
+  text-align: center;
+  font-size: 14px;
+  color: rgba(var(--text-color-rgb), 0.75);
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  gap: 1.5em;
+  margin-bottom: 0.5em;
+}
+
+.menuLink {
+  &:hover {
+    color: var(--link-color);
+  }
+}
+
+.copyright {
+  margin-top: 1.5em;
+  color: rgba(var(--text-color-rgb), 0.4);
+}
