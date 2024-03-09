@@ -10,7 +10,7 @@ const { title } = Astro.props
 
 <Layout title={title}>
   <Header />
-  <Container>
+  <Container as="main">
     <div class={styles.columns}>
       <div class={styles.column}>
         <slot name="main" />

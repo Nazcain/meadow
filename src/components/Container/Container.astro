@@ -1,7 +1,11 @@
 ---
 import styles from "./Container.module.scss"
+
+const { as = "div", size = "medium" } = Astro.props
+
+const Element = as
 ---
 
-<div class={styles.el}>
+<Element class:list={[styles.el, styles[`el_${size}`]]}>
   <slot />
-</div>
+</Element>

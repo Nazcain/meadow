@@ -2,20 +2,39 @@
 
 .el {
   margin-bottom: 48px;
+  padding-top: 40px;
 }
 
 .link {
   display: inline-flex;
   align-items: center;
-  gap: 20px;
+  gap: 12px;
+  transition: opacity 0.15s;
+
+  &:not(:hover) {
+    opacity: 0.8;
+  }
+
+  @include media(">=tablet") {
+    gap: 16px;
+  }
 }
 
 .logo {
-  width: 50px;
+  width: 34.5px;
+
+  @include media(">=tablet") {
+    width: 46px;
+  }
 }
 
 .title {
-  margin-top: -12px;
+  margin-top: -8px;
   font-weight: 600;
-  font-size: 40px;
+  font-size: 24px;
+  color: var(--black);
+
+  @include media(">=tablet") {
+    font-size: 32px;
+  }
 }

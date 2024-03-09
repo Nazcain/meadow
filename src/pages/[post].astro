@@ -1,0 +1,43 @@
+---
+import Layout from "@layouts/Post.astro"
+import Article from "@components/Article/Article.astro"
+
+export async function getStaticPaths() {
+  let posts = await Astro.glob("@content/blog/**/*.md")
+
+  posts = posts.filter((post) => {
+    if (new Date() >= new Date(post.frontmatter.date)) {
+      return post
+    }
+  })
+
+  return posts.map((post) => {
+    const slug = post.file.split("/").reverse()[0].replace(".md", "")
+    return {
+      params: { post: slug },
+      props: { post },
+    }
+  })
+}
+
+const {
+  post: {
+    Content,
+    frontmatter: { title, description, date, author, authorImage, authorUrl },
+  },
+  post,
+} = Astro.props
+---
+
+<Layout title={title}>
+  <Article
+    title={title}
+    description={description}
+    date={date}
+    author={author}
+    authorImage={authorImage}
+    authorUrl={authorUrl}
+  >
+    <Content />
+  </Article>
+</Layout>

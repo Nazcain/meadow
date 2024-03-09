@@ -1,10 +1,10 @@
 @import "@styles/shared";
 
 .el {
-  margin-top: 90px;
+  margin-top: 60px;
   padding: 60px 0;
   // background-color: #f1eee7;
-  border-top: 1px solid rgba(#000, 0.1);
+  border-top: 1px solid var(--border-color);
   text-align: center;
   font-size: 14px;
   color: rgba(var(--text-color-rgb), 0.75);
@@ -15,6 +15,7 @@
   justify-content: center;
   gap: 1.5em;
   margin-bottom: 0.5em;
+  list-style: none;
 }
 
 .menuLink {

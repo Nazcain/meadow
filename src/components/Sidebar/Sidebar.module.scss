@@ -1,1 +1,7 @@
 @import "@styles/shared";
+
+.el {
+  > :not(:last-child) {
+    margin-bottom: 20px;
+  }
+}

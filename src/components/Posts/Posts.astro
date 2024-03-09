@@ -1,47 +1,38 @@
 ---
 import Box from "@components/Box/Box.astro"
+import FomattedDate from "@components/Date/Date.astro"
 import styles from "./Posts.module.scss"
 
-const posts = [
-  {
-    title: "Introducing Meadow",
-    date: "Apr 6, 2024",
-    author: "Joanna Rutkowska",
-    excerpt: "Praesent maximus risus quam, id bibendum tortor ultrices nec.",
-  },
-  {
-    title: "Using Meadow with Obsidian",
-    date: "Mar 16, 2024",
-    author: "Joanna Rutkowska",
-    excerpt:
-      "Sed sit amet aliquam erat, et imperdiet risus. Phasellus ante elit.",
-  },
-  {
-    title: "Pellentesque nisi quam ullamcorper",
-    date: "Feb 12, 2024",
-    author: "Marcin Stachyra",
-    excerpt: "Phasellus ante elit, vehicula a ligula id.",
-  },
-  {
-    title: "Mauris magna urna accumsan in scelerisque",
-    date: "Jan 11, 2024",
-    author: "Marcin Stachyra",
-    excerpt: "Vestibulum felis diam, cursus a maximus id.",
-  },
-]
+let posts = await Astro.glob("@content/blog/**/*.md")
+posts = posts.filter((post) => {
+  if (new Date() >= new Date(post.frontmatter.date)) {
+    return post
+  }
+})
+posts.sort(
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
+)
 ---
 
 {
-  posts.map(({ title, date, author, excerpt }) => (
-    <Box type="plain" href="#">
-      <h3 class={styles.title}>
-        {title}
-        <i>→</i>
-      </h3>
-      <p class={styles.excerpt}>{excerpt}</p>
-      <p class={styles.meta}>
-        {date} <i /> {author}
-      </p>
-    </Box>
-  ))
+  posts.map((post) => {
+    const slug = post.file.split("/").reverse()[0].replace(".md", "")
+    const {
+      frontmatter: { title, description, shortDescription, date, author },
+    } = post
+    return (
+      <Box type="plain" href={`/${slug}`}>
+        <h3 class={styles.title}>
+          {title}
+          <i>→</i>
+        </h3>
+        <p class={styles.description}>{shortDescription || description}</p>
+        <p class={styles.meta}>
+          <FomattedDate date={date} />
+          <i />
+          {author}
+        </p>
+      </Box>
+    )
+  })
 }

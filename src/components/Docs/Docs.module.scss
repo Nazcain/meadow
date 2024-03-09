@@ -1,8 +1,11 @@
 @import "@styles/shared";
 
 .el {
-  display: grid;
-  gap: 60px;
-  grid-template-columns: 1fr 1fr 1fr;
-  margin-bottom: 60px;
+  margin-bottom: var(--column-spacing);
+
+  @include media(">=tablet") {
+    display: grid;
+    gap: var(--column-spacing);
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }

@@ -6,4 +6,16 @@
   margin-right: auto;
   padding-left: var(--side-padding);
   padding-right: var(--side-padding);
+
+  &_small {
+    --container-width: var(--container-width-small);
+  }
+
+  @include media(">=desktop") {
+    @media (max-width: 1340px) {
+      &:has(:global(.sidenote)) {
+        margin-right: calc(var(--sidenote-width) + var(--column-spacing));
+      }
+    }
+  }
 }

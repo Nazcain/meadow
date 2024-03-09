@@ -1,0 +1,51 @@
+---
+import FomattedDate from "@components/Date/Date.astro"
+import styles from "./Article.module.scss"
+
+const { title, description, date, author, authorImage } = Astro.props
+---
+
+<article class={styles.el}>
+  <header class={styles.header}>
+    <h1 class={styles.title}>{title}</h1>
+    <h2 class={styles.description}>{description}</h2>
+    <p class={styles.meta}>
+      <FomattedDate date={date} />
+      <i></i>
+      {
+        authorImage && (
+          <img class={styles.authorImage} src={authorImage} alt={author} />
+        )
+      }
+      {author}
+    </p>
+  </header>
+  <slot />
+</article>
+
+<script>
+  const footnoteLinks = document.querySelectorAll("[data-footnote-ref]")
+  const footerFootnotes = document.querySelector("[data-footnotes]")
+
+  footnoteLinks.forEach((link) => {
+    const parent = link.closest("p, ul, ol")
+    const contentEl = document.querySelector(`${link.getAttribute("href")}`)
+    if (!contentEl) {
+      return
+    }
+    const container = document.createElement("div")
+    const sidenote = document.createElement("div")
+    container.classList.add("sidenote-container")
+    sidenote.classList.add("sidenote")
+    sidenote.innerHTML = contentEl.innerHTML
+    sidenote.querySelector("[data-footnote-backref]").remove()
+    parent.parentNode.insertBefore(container, parent)
+    container.append(parent)
+    container.append(sidenote)
+    link.closest("sup").remove()
+  })
+
+  if (footerFootnotes) {
+    footerFootnotes.remove()
+  }
+</script>

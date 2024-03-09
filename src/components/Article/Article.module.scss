@@ -1,0 +1,77 @@
+@import "@styles/shared";
+
+.el {
+  img:not([class]),
+  video {
+    display: block;
+    height: auto;
+    margin: calc(var(--base-line-height) * 1.8em) 0;
+    border-radius: 10px;
+  }
+
+  h3 + p > img:not([class]):first-child {
+    // margin-top: calc(var(--base-line-height) * 1em);
+  }
+
+  video {
+    max-width: 100%;
+  }
+}
+
+.header {
+  margin-bottom: 58px;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.2;
+  text-wrap: balance;
+
+  @include media(">=tablet") {
+    font-size: 40px;
+  }
+}
+
+.description {
+  margin-top: 0.8em;
+  // font-weight: 400;
+  font-size: 18px;
+  line-height: 1.4;
+  color: rgba(var(--text-color-rgb), 0.75);
+
+  @include media(">=tablet") {
+    font-size: 22px;
+  }
+}
+
+.meta {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  margin-top: 1.7em;
+  margin-bottom: 0;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: rgba(var(--text-color-rgb), 0.75);
+
+  i {
+    width: 1px;
+    height: 1.5em;
+    margin-top: -0.05em;
+    background-color: rgba(#000, 0.2);
+  }
+}
+
+.authorImage {
+  --size: 30px;
+  // display: none;
+  width: var(--size);
+  height: var(--size);
+  object-fit: cover;
+  border-radius: 50%;
+  // clip-path: url(/images/squircle.svg#clip-squircle);
+  // -webkit-mask: url(/images/squircle.svg#clip-squircle);
+}

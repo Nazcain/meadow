@@ -1,7 +1,7 @@
 @import "@styles/shared";
 
 .el {
-  margin-bottom: 20px;
+  // margin-bottom: 20px;
   padding: 30px;
   border-radius: 10px;
   transition: 0.15s;
@@ -17,23 +17,35 @@
     --hover-bg-color: rgba(0, 0, 0, 0.04);
   }
 
-  &:not(:last-child) {
+  @include media("<tablet") {
+    &:not(:last-child) {
+      margin-bottom: 40px;
+    }
+  }
+
+  @include media("<tablet") {
+    &_plain {
+      padding: 0;
+    }
   }
 }
 
 a.el {
   display: block;
 
-  &:hover {
-    background-color: var(--hover-bg-color);
+  @include media(">=tablet") {
+    &:hover {
+      background-color: var(--hover-bg-color);
+      color: var(--black);
+    }
   }
 }
 
 .title {
+  opacity: 0.75;
   margin-bottom: calc(var(--base-line-height) * 1em);
   font-weight: 600;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.1em;
-  color: rgba(#000, 0.6);
 }

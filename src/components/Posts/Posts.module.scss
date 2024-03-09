@@ -1,14 +1,15 @@
 @import "@styles/shared";
 
 .title {
-  margin-top: -0.1em;
-  margin-bottom: 0.8em;
+  margin-bottom: 0.4em;
   font-weight: 700;
   font-size: 20px;
+  line-height: 1.2;
+  text-wrap: balance;
 
   i {
     opacity: 0;
-    margin-left: 0.3em;
+    margin-left: 0.35em;
     position: relative;
     top: -0.07em;
     font-weight: var(--base-font-weight);
@@ -23,19 +24,21 @@
   }
 }
 
-.excerpt {
-  margin-bottom: 1.3em;
+.description {
+  opacity: 0.75;
+  margin-bottom: 1.2em;
+  text-wrap: balance;
 }
 
 .meta {
   display: flex;
   gap: 1em;
+  opacity: 0.75;
   margin-bottom: 0;
   font-weight: 600;
   text-transform: uppercase;
   font-size: 12px;
   letter-spacing: 0.1em;
-  color: rgba(#000, 0.6);
 
   i {
     width: 1px;

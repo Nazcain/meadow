@@ -5,18 +5,20 @@ import Screenshots from "@components/Screenshots/Screenshots.astro"
 import styles from "./Sidebar.module.scss"
 ---
 
-<Box title="About" href="#">
-  <p>
-    Meadow is designed to enhance cognitive abilities by providing a robust
-    system for organizing diverse information surrounding a particular topic.
-  </p>
-  <p>
-    <span class="link">Learn more<i>→</i></span>
-  </p>
-</Box>
-<Box title="Download">
-  <Download />
-</Box>
-<Box title="Screenshots">
-  <Screenshots />
-</Box>
+<div class={styles.el}>
+  <Box title="About" href="/about">
+    <p>
+      Meadow is designed to enhance cognitive abilities by providing a robust
+      system for organizing diverse information surrounding a particular topic.
+    </p>
+    <p>
+      <span class="link">Learn more<i>→</i></span>
+    </p>
+  </Box>
+  <Box title="Download">
+    <Download />
+  </Box>
+  <Box title="Screenshots">
+    <Screenshots />
+  </Box>
+</div>
