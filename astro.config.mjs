@@ -15,6 +15,6 @@ export default defineConfig({
       transformers: [],
     },
   },
-  output: "server",
+  output: "hybrid",
   adapter: netlify(),
 })
