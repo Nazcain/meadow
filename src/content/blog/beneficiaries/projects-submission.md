@@ -8,6 +8,8 @@ description: "We’re excited to unveil the Octant Community Project Submission 
 shortDescription: "Introducing the Octant Community Project Submission Process, streamlining funding for aligned projects."
 ---
 
+![Octant Community Project Submission Process](beneficiaries.png)
+
 In the ever-evolving landscape of decentralized governance, Octant stands as a beacon of opportunity for projects that aim to make a positive impact on the world of public goods. Octant is your partner in funding innovative projects, including you!
 
 We’re excited to unveil the Octant Community Project Submission Proposal Process. This process streamlines funding, ensuring that projects aligned with our mission receive the support they deserve. We are sharing the steps below.
