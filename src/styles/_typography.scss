@@ -162,7 +162,7 @@ h6 {
   padding: 10px;
   background-color: rgba(0, 0, 0, 0.04) !important;
   border-radius: 10px;
-  font-size: 0.95em;
+  font-size: 0.9em;
   font-family: monospace;
 
   &:not(:last-child) {
@@ -252,36 +252,11 @@ tbody tr:last-child {
   }
 }
 
-// .footnotes {
-//   margin-top: calc(var(--base-line-height) * 1.8em);
-//   padding: 30px;
-//   background-color: rgba(0, 0, 0, 0.04);
-//   border-radius: 10px;
-
-//   h2 {
-//     opacity: 0.75;
-//     margin-bottom: calc(var(--base-line-height) * 1em);
-//     font-weight: 600;
-//     text-transform: uppercase;
-//     font-size: 12px;
-//     letter-spacing: 0.1em;
-//   }
-
-//   a[data-footnote-backref] {
-//     transition: opacity 0.15s;
-
-//     &:not(:hover) {
-//       opacity: 0.5;
-//     }
-//   }
-// }
-
 .sidenote-container {
   position: relative;
 }
 
 .sidenote {
-  margin-bottom: calc(var(--base-line-height) * 1em);
   // text-wrap: balance;
   font-size: 14px;
   line-height: 1.4;
@@ -289,6 +264,10 @@ tbody tr:last-child {
 
   p:not(:last-child) {
     margin-bottom: 0.8em;
+  }
+
+  @include media("<tablet") {
+    margin-bottom: 2em;
   }
 
   @include media(">=desktop") {

@@ -16,6 +16,15 @@
   video {
     max-width: 100%;
   }
+
+  @include media("<tablet") {
+    :global(.sidenote-container) > p {
+      > img:not([class]),
+      > video {
+        margin-bottom: -0.8em;
+      }
+    }
+  }
 }
 
 .header {
