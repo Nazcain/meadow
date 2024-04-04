@@ -14,11 +14,13 @@ export function GET(context) {
     (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
   )
 
+  console.log(context)
+
   return rss({
     title: "Meadow",
     description:
       "Meadow is designed to enhance cognitive abilities by providing a robust system for organizing diverse information surrounding a particular topic.",
-    site: context.site || "http://localhost:4321",
+    site: context.site || context.url.origin,
     items: posts.map((post) => {
       const slug = post.file.split("/").reverse()[0].replace(".md", "")
       const {
