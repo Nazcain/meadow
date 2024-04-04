@@ -20,7 +20,7 @@ export function GET(context) {
     title: "Meadow",
     description:
       "Meadow is designed to enhance cognitive abilities by providing a robust system for organizing diverse information surrounding a particular topic.",
-    site: context.site || context.url.origin,
+    site: context.site,
     items: posts.map((post) => {
       const slug = post.file.split("/").reverse()[0].replace(".md", "")
       const {
