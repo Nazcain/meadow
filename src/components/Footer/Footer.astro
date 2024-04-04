@@ -7,13 +7,10 @@ import styles from "./Footer.module.scss"
   <Container>
     <ul class={styles.menu}>
       <li>
-        <a class={styles.menuLink} href="#">Home</a>
+        <a class={styles.menuLink} href="/">Home</a>
       </li>
       <li>
-        <a class={styles.menuLink} href="#">About</a>
-      </li>
-      <li>
-        <a class={styles.menuLink} href="#">Blog</a>
+        <a class={styles.menuLink} href="/about">About</a>
       </li>
     </ul>
     <ul class={styles.menu}>
@@ -27,6 +24,8 @@ import styles from "./Footer.module.scss"
         <a class={styles.menuLink} href="#">Developer docs</a>
       </li>
     </ul>
-    <p class={styles.copyright}>© 2024 Golem Foundation, Zug, Switzerland</p>
+    <p class={styles.copyright}>
+      © {new Date().getFullYear()} Golem Foundation, Zug, Switzerland
+    </p>
   </Container>
 </footer>

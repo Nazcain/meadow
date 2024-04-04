@@ -1,0 +1,19 @@
+---
+import Layout from "@layouts/Layout.astro"
+import Header from "@components/Header/Header.astro"
+import Footer from "@components/Footer/Footer.astro"
+import Container from "@components/Container/Container.astro"
+import Article from "@components/Article/Article.astro"
+
+const { title } = Astro.props
+---
+
+<Layout title={title}>
+  <Header />
+  <Container as="main" size="small">
+    <Article>
+      <slot />
+    </Article>
+  </Container>
+  <Footer />
+</Layout>

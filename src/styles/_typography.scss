@@ -119,6 +119,18 @@ ul {
   }
 }
 
+h1:not([class]) {
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 30px;
+  line-height: 1.2;
+  text-wrap: balance;
+
+  @include media(">=tablet") {
+    font-size: 40px;
+  }
+}
+
 h2:not([class]) {
   margin-bottom: 0.4em;
   font-weight: 700;
