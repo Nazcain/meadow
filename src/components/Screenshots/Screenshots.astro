@@ -10,23 +10,21 @@ const images = [screenshot1, screenshot2, screenshot3]
 
 <div class={styles.el} data-screenshots>
   {
-    images.map((image, index) => {
-      return (
-        <a
-          class={styles.link}
-          href={image.src}
-          data-lg-size={`${image.width}-${image.height}`}
-        >
-          <Image
-            class={styles.image}
-            src={image}
-            width={72}
-            densities={[1, 2]}
-            alt={`Screenshot ${index + 1}`}
-          />
-        </a>
-      )
-    })
+    images.map((image, index) => (
+      <a
+        class={styles.link}
+        href={image.src}
+        data-lg-size={`${image.width}-${image.height}`}
+      >
+        <Image
+          class={styles.image}
+          src={image}
+          width={72}
+          densities={[1, 2]}
+          alt={`Screenshot ${index + 1}`}
+        />
+      </a>
+    ))
   }
 </div>
 
