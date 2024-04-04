@@ -14,8 +14,6 @@ export function GET(context) {
     (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
   )
 
-  console.log(context)
-
   return rss({
     title: "Meadow",
     description:
