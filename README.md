@@ -8,7 +8,7 @@ Each blog post is a Markdown file. It can be placed directly in the `blog` direc
 
 The names of subdirectories are only used for organizational purposes. The name of the Markdown file is used to create the URL of the blog post.
 
-Images should be placed in subdirectories with the Markdown files. This way, they are processed and optimized (automatically converted to WebP).
+Images should be placed in subdirectories with the Markdown files. This way, they are processed and optimized for better performance.
 
 Posts are sorted by date, which can be specified in the `date` field in the Markdown file. You can set a future date to make the post a draft (it won’t be displayed on the blog).
 
