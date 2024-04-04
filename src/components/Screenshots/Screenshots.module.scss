@@ -7,13 +7,14 @@
 }
 
 .link {
+  flex: 1;
   transition: opacity 0.15s;
-
-  &:not(:hover) {
-    // opacity: 0.9;
-  }
 
   &:hover {
     opacity: 0.9;
   }
+}
+
+.image {
+  height: auto;
 }

@@ -17,6 +17,9 @@ dependencies:
   autoprefixer:
     specifier: ^10.4.17
     version: 10.4.17(postcss@8.4.35)
+  lightgallery:
+    specifier: ^2.7.2
+    version: 2.7.2
   sass:
     specifier: ^1.71.1
     version: 1.71.1
@@ -1876,6 +1879,11 @@ packages:
   /kleur@4.1.5:
     resolution: {integrity: sha512-o+NO+8WrRiQEE4/7nwRJhN1HWpVmJm511pBHUxPLtp0BUISzlBplORYSmTclCnJvQq2tKu/sgl3xVpkc7ZWuQQ==}
     engines: {node: '>=6'}
+    dev: false
+
+  /lightgallery@2.7.2:
+    resolution: {integrity: sha512-Ewdcg9UPDqV0HGZeD7wNE4uYejwH2u0fMo5VAr6GHzlPYlhItJvjhLTR0cL0V1HjhMsH39PAom9iv69ewitLWw==}
+    engines: {node: '>=6.0.0'}
     dev: false
 
   /load-yaml-file@0.2.0:

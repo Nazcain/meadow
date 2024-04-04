@@ -1,15 +1,42 @@
 ---
+import { Image } from "astro:assets"
 import styles from "./Screenshots.module.scss"
+import "lightgallery/css/lightgallery.css"
+import screenshot1 from "@assets/screenshots/1.png"
+import screenshot2 from "@assets/screenshots/2.png"
+import screenshot3 from "@assets/screenshots/3.png"
+const images = [screenshot1, screenshot2, screenshot3]
 ---
 
-<div class={styles.el}>
-  <a class={styles.link} href="/images/screenshots/1.png">
-    <img class={styles.image} src="/images/screenshots/1.png" />
-  </a>
-  <a class={styles.link} href="/images/screenshots/2.png">
-    <img class={styles.image} src="/images/screenshots/2.png" />
-  </a>
-  <a class={styles.link} href="/images/screenshots/3.png">
-    <img class={styles.image} src="/images/screenshots/3.png" />
-  </a>
+<div class={styles.el} data-screenshots>
+  {
+    images.map((image, index) => {
+      return (
+        <a
+          class={styles.link}
+          href={image.src}
+          data-lg-size={`${image.width}-${image.height}`}
+        >
+          <Image
+            class={styles.image}
+            src={image}
+            width={72}
+            densities={[1, 2]}
+            alt={`Screenshot ${index + 1}`}
+          />
+        </a>
+      )
+    })
+  }
 </div>
+
+<script>
+  import lightGallery from "lightgallery"
+
+  document.addEventListener("DOMContentLoaded", function () {
+    lightGallery(document.querySelector("[data-screenshots]"), {
+      startAnimationDuration: 300,
+      download: false,
+    })
+  })
+</script>
