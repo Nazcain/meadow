@@ -3,6 +3,7 @@ import netlify from "@astrojs/netlify"
 
 // https://astro.build/config
 export default defineConfig({
+  site: "https://meadow-dev.netlify.app",
   devToolbar: {
     enabled: false,
   },
