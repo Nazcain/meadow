@@ -2,28 +2,28 @@ em {
   font-weight: 600;
 }
 
-sup {
-  position: relative;
-  font-size: 0.75em;
-  line-height: 0;
-  vertical-align: baseline;
-  top: -0.4em;
+// sup {
+//   position: relative;
+//   font-size: 0.75em;
+//   line-height: 0;
+//   vertical-align: baseline;
+//   top: -0.4em;
 
-  a {
-    display: inline-block;
-    padding: 8px 6px;
-    background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
-    border-radius: 3px;
-    font-weight: 500;
-    // font-family: monospace;
-    color: var(--accent-color);
+//   a {
+//     display: inline-block;
+//     padding: 8px 6px;
+//     background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
+//     border-radius: 3px;
+//     font-weight: 500;
+//     // font-family: monospace;
+//     color: var(--accent-color);
 
-    &:hover {
-      background-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
-      // color: var(--black);
-    }
-  }
-}
+//     &:hover {
+//       background-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
+//       // color: var(--black);
+//     }
+//   }
+// }
 
 p,
 ol,
