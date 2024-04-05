@@ -1,3 +1,14 @@
+@mixin dark-mode-styles() {
+  --bg-color: var(--ultra-dark-gray);
+  --text-color: var(--extra-light-gray);
+  --text-color-rgb: var(--white-rgb);
+  --text-color-max-contrast: var(--white);
+  --text-color-max-contrast-rgb: 255, 255, 255;
+  --link-color: var(--light-green);
+  --link-color-rgb: var(--light-green-rgb);
+  --accent-color: var(--light-green);
+}
+
 :root {
   --black: #000;
   --white: #fff;
@@ -31,15 +42,15 @@
   --container-width-small: 700px;
   --side-padding: 20px;
 
+  @media (prefers-color-scheme: dark) {
+    &:not(.theme-light) {
+      // avoid flash of white
+      @include dark-mode-styles();
+    }
+  }
+
   &.theme-dark {
-    --bg-color: var(--ultra-dark-gray);
-    --text-color: var(--extra-light-gray);
-    --text-color-rgb: var(--white-rgb);
-    --text-color-max-contrast: var(--white);
-    --text-color-max-contrast-rgb: 255, 255, 255;
-    --link-color: var(--light-green);
-    --link-color-rgb: var(--light-green-rgb);
-    --accent-color: var(--light-green);
+    @include dark-mode-styles();
   }
 
   @include media(">=tablet") {
