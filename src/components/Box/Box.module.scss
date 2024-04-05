@@ -5,7 +5,7 @@
   padding: 30px;
   border-radius: 10px;
   transition: 0.15s;
-  transition-property: background-color, color;
+  transition-property: background-color, border-color, color;
 
   &_regular {
     --bg-color: rgba(0, 0, 0, 0.04);
@@ -15,6 +15,11 @@
 
   &_plain {
     --hover-bg-color: rgba(0, 0, 0, 0.04);
+  }
+
+  &_border {
+    --hover-bg-color: rgba(0, 0, 0, 0.04);
+    border: 1px solid var(--border-color);
   }
 
   @include media("<tablet") {
@@ -36,6 +41,7 @@ a.el {
   @include media(">=tablet") {
     &:hover {
       background-color: var(--hover-bg-color);
+      border-color: transparent;
       color: var(--black);
     }
   }
