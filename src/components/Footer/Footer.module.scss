@@ -8,13 +8,19 @@
   text-align: center;
   font-size: 14px;
   color: rgba(var(--text-color-rgb), 0.75);
+
+  > div {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
 }
 
 .menu {
   display: flex;
   justify-content: center;
   gap: 1.5em;
-  margin-bottom: 0.5em;
+  margin-bottom: 0;
   list-style: none;
 }
 
@@ -22,9 +28,47 @@
   &:hover {
     color: var(--link-color);
   }
+
+  i {
+    margin-left: 0.4em;
+    transition: opacity 0.15s;
+  }
+
+  &:not(:hover) {
+    i {
+      opacity: 0.5;
+    }
+  }
 }
 
 .copyright {
-  margin-top: 1.5em;
+  margin-bottom: 0;
   color: rgba(var(--text-color-rgb), 0.4);
+}
+
+.themeSwitcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  // margin-top: 1.5em;
+  color: rgba(var(--text-color-rgb), 0.4);
+}
+
+.themeSwitcherButton {
+  transition: color 0.15s;
+  &:first-child,
+  &:hover {
+    // text-decoration: underline;
+    // text-decoration-thickness: 1px;
+    // text-decoration-color: rgba(var(--link-color-rgb), 0.5);
+    // text-underline-offset: 2px;
+    color: rgba(var(--text-color-rgb), 0.75);
+  }
+}
+
+.themeSwitcherSeparator {
+  width: 1px;
+  height: 20px;
+  background-color: var(--border-color);
 }

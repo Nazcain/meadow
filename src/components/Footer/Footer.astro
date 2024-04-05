@@ -12,20 +12,23 @@ import styles from "./Footer.module.scss"
       <li>
         <a class={styles.menuLink} href="/about">About</a>
       </li>
-    </ul>
-    <ul class={styles.menu}>
       <li>
-        <a class={styles.menuLink} href="#">Quick start guide</a>
+        <a class={styles.menuLink} href="#">Quick start guide<i>↗</i></a>
       </li>
       <li>
-        <a class={styles.menuLink} href="#">User docs</a>
+        <a class={styles.menuLink} href="#">User docs<i>↗</i></a>
       </li>
       <li>
-        <a class={styles.menuLink} href="#">Developer docs</a>
+        <a class={styles.menuLink} href="#">Developer docs<i>↗</i></a>
       </li>
     </ul>
     <p class={styles.copyright}>
       © {new Date().getFullYear()} Golem Foundation, Zug, Switzerland
     </p>
+    <div class={styles.themeSwitcher}>
+      <button class={styles.themeSwitcherButton}>Light</button>
+      <span class={styles.themeSwitcherSeparator}></span>
+      <button class={styles.themeSwitcherButton}>Dark</button>
+    </div>
   </Container>
 </footer>
