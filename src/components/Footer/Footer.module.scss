@@ -26,6 +26,7 @@
 }
 
 .menuLink {
+  transition: color 0.15s;
   &:hover {
     color: var(--link-color);
   }
@@ -58,7 +59,9 @@
 
 .themeSwitcherButton {
   transition: color 0.15s;
-  &:first-child,
+
+  :global(.theme-light) &[data-theme-switcher="light"],
+  :global(.theme-dark) &[data-theme-switcher="dark"],
   &:hover {
     // text-decoration: underline;
     // text-decoration-thickness: 1px;

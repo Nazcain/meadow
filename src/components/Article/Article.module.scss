@@ -70,7 +70,7 @@
     width: 1px;
     height: 1.5em;
     margin-top: -0.05em;
-    background-color: rgba(#000, 0.2);
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.2);
   }
 }
 

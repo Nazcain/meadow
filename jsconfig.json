@@ -7,6 +7,7 @@
       "@pages/*": ["src/pages/*"],
       "@content/*": ["src/content/*"],
       "@styles/*": ["src/styles/*"],
+      "@scripts/*": ["src/scripts/*"],
       "@helpers/*": ["src/helpers/*"],
       "@assets/*": ["src/assets/*"]
     }

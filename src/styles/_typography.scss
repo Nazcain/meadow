@@ -12,14 +12,14 @@ sup {
   a {
     display: inline-block;
     padding: 8px 6px;
-    background-color: rgba(0, 0, 0, 0.04);
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
     border-radius: 3px;
     font-weight: 500;
     // font-family: monospace;
     color: var(--accent-color);
 
     &:hover {
-      background-color: rgba(0, 0, 0, 0.08);
+      background-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
       // color: var(--black);
     }
   }
@@ -55,7 +55,7 @@ a:not([class]):not(sup a),
     top: -0.1em;
     right: calc(var(--icon-padding) * -1);
     font-style: inherit;
-    color: rgba(#000, 0.3);
+    color: rgba(var(--text-color-max-contrast-rgb), 0.3);
     transition: color 0.15s;
   }
 
@@ -172,7 +172,7 @@ h6 {
   margin-left: -10px;
   margin-right: -10px;
   padding: 10px;
-  background-color: rgba(0, 0, 0, 0.04) !important;
+  background-color: rgba(var(--text-color-max-contrast-rgb), 0.04) !important;
   border-radius: 10px;
   font-size: 0.9em;
   font-family: monospace;
@@ -180,15 +180,22 @@ h6 {
   &:not(:last-child) {
     margin-bottom: calc(var(--base-line-height) * 1em);
   }
+
+  .theme-dark & {
+    &,
+    * {
+      color: inherit !important;
+    }
+  }
 }
 
 code {
   &:not(pre code) {
     padding: 3px 5px;
-    background-color: rgba(0, 0, 0, 0.04) !important;
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.04) !important;
     border-radius: 5px;
     font-family: monospace;
-    color: #24292e;
+    // color: #24292e;
   }
 }
 
@@ -205,7 +212,7 @@ table {
 th,
 td {
   padding: 5px 10px;
-  border: solid #ddd;
+  border: solid var(--border-color);
   border-width: 0;
   text-align: left;
 
@@ -230,7 +237,7 @@ td {
 }
 
 th {
-  background-color: rgba(0, 0, 0, 0.04);
+  background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
   font-weight: 600;
 }
 

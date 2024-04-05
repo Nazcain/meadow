@@ -12,7 +12,7 @@
     position: absolute;
     top: 0;
     left: 50%;
-    background-color: rgba(#000, 0.1);
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.1);
     transition: opacity 0.15s;
   }
 
@@ -37,11 +37,11 @@
   border-radius: 10px;
   // box-shadow: inset 0 0 1px 1px #fff, 0 0 0 1px rgba(0, 0, 0, 0.04),
   // 0 2px 3px rgba(0, 0, 0, 0.06);
-  color: #000;
+  color: var(--text-color-max-contrast);
   transition: background-color 0.15s;
 
   &:hover {
-    background-color: rgba(#000, 0.04);
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
     // border-color: #ccc;
     // color: #000;
     // box-shadow: inset 0 0 1px 1px #fff, 0 0 0 1px rgba(0, 0, 0, 0.06),

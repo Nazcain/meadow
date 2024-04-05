@@ -1,16 +1,21 @@
-$link-color: #227223;
-
 :root {
   --black: #000;
   --white: #fff;
+  --white-rgb: 255, 255, 255;
+  --extra-light-gray: #ddd;
   --extra-dark-gray: #333;
+  --ultra-dark-gray: #181818;
   --extra-dark-gray-rgb: 51, 51, 51;
   --green: #227223;
   --green-rgb: 34, 114, 35;
+  --light-green: #73c874;
+  --light-green-rgb: 115, 200, 116;
   --bg-color: var(--white);
-  --border-color: rgba(0, 0, 0, 0.1);
+  --border-color: rgba(var(--text-color-max-contrast-rgb), 0.1);
   --text-color: var(--extra-dark-gray);
   --text-color-rgb: var(--extra-dark-gray-rgb);
+  --text-color-max-contrast: var(--black);
+  --text-color-max-contrast-rgb: 0, 0, 0;
   --link-color: var(--green);
   --link-color-rgb: var(--green-rgb);
   --accent-color: var(--green);
@@ -26,6 +31,17 @@ $link-color: #227223;
   --container-width-small: 700px;
   --side-padding: 20px;
 
+  &.theme-dark {
+    --bg-color: var(--ultra-dark-gray);
+    --text-color: var(--extra-light-gray);
+    --text-color-rgb: var(--white-rgb);
+    --text-color-max-contrast: var(--white);
+    --text-color-max-contrast-rgb: 255, 255, 255;
+    --link-color: var(--light-green);
+    --link-color-rgb: var(--light-green-rgb);
+    --accent-color: var(--light-green);
+  }
+
   @include media(">=tablet") {
     --side-padding: 60px;
     --column-spacing: 60px;
@@ -34,6 +50,7 @@ $link-color: #227223;
 }
 
 body {
+  color-scheme: light dark;
   background-color: var(--bg-color);
   font-weight: var(--base-font-weight);
   font-size: var(--base-font-size);

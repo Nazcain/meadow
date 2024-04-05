@@ -26,9 +26,13 @@ import styles from "./Footer.module.scss"
       © {new Date().getFullYear()} Golem Foundation, Zug, Switzerland
     </p>
     <div class={styles.themeSwitcher}>
-      <button class={styles.themeSwitcherButton}>Light</button>
+      <button class={styles.themeSwitcherButton} data-theme-switcher="light"
+        >Light</button
+      >
       <span class={styles.themeSwitcherSeparator}></span>
-      <button class={styles.themeSwitcherButton}>Dark</button>
+      <button class={styles.themeSwitcherButton} data-theme-switcher="dark"
+        >Dark</button
+      >
     </div>
   </Container>
 </footer>

@@ -8,13 +8,22 @@
   transition-property: background-color, color;
 
   &_regular {
-    --bg-color: rgba(0, 0, 0, 0.04);
-    --hover-bg-color: rgba(0, 0, 0, 0.08);
+    --bg-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
+    --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
     background-color: var(--bg-color);
+
+    :global(.theme-dark) & {
+      // --bg-color: rgba(var(--text-color-max-contrast-rgb), 0.05);
+      // --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.09);
+    }
   }
 
   &_plain {
-    --hover-bg-color: rgba(0, 0, 0, 0.04);
+    --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
+
+    :global(.theme-dark) & {
+      // --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.05);
+    }
   }
 
   @include media("<tablet") {
@@ -36,7 +45,7 @@ a.el {
   @include media(">=tablet") {
     &:hover {
       background-color: var(--hover-bg-color);
-      color: var(--black);
+      color: var(--text-color-max-contrast);
     }
   }
 }

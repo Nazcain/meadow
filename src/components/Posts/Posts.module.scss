@@ -15,7 +15,7 @@
     font-weight: var(--base-font-weight);
     font-style: inherit;
     font-size: var(--base-font-size);
-    color: rgba(#000, 0.3);
+    color: rgba(var(--text-color-max-contrast-rgb), 0.3);
     transition: opacity 0.15s;
 
     a:hover & {
@@ -44,6 +44,6 @@
     width: 1px;
     height: 1.5em;
     margin-top: -0.05em;
-    background-color: rgba(#000, 0.2);
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.2);
   }
 }
