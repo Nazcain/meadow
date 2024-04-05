@@ -18,8 +18,9 @@
 
 .menu {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
-  gap: 1.5em;
+  gap: 0.5em 1.5em;
   margin-bottom: 0;
   list-style: none;
 }
