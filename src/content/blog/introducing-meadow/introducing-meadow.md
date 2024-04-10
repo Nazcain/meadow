@@ -1,147 +1,124 @@
 ---
 title: "Introducing Meadow"
-date: 2024-03-09
+date: 2024-04-10
 author: Joanna Rutkowska
 authorImage: https://golem.foundation/assets/img/team/joanna.jpg
 authorUrl: https://golem.foundation/team#joanna-rutkowska
-description: "Wildland seeks to offer a viable alternative to bundled, closed services. But why is such a change so important in the first place? Our current digital environment is far from a wild, freely expanding forest of knowledge, but we see an opportunity for change by targeting an array of interlinked challenges."
-shortDescription: "Praesent maximus risus quam, id bibendum tortor ultrices nec."
+description: "This post presents a new tool - _Meadow_ - that we have been building at Golem Foundation over the last year."
+shortDescription: "This post presents a new tool - _Meadow_"
 ---
 
-On behalf of the whole [team][team], I'm proud to announce the first public release of Wildland client! This is a reference implementation of the Wildland protocol, which we have described in our ["Why, What and How" (aka W2H) paper][w2h].
+*Meadow* tries to be a tool to help people make better sense of the vast landscape of information which we’re all emerged within.[^Wildland]
 
-Leaving aside all the usual disclaimers about how early-beta and for-power-users-only this version really is, I'd like to focus on what's already working and possible :)
+[^Wildland]: Meadow conceptually belongs into the wider initiative under the umbrella name _Wildland_ -- a set of ideas and projects we’ve been researching and developing at the Golem Foundation over the last 5 years. Still, Meadow is a standalone product, not dependent on any of the previous software we released before.
 
-## The client functionality
 
-Here’s a sample footnote.[^1] Firstly, you can connect multiple storage backends (S3 buckets, WebDAV servers, Dropbox accounts, etc) and expose them all as _one unified file system_ as shown on the screenshot below. We believe that this is how data management should really be done. Users should not be concerned with which service provider their data is currently being held on. Instead, we should be able to address our data using infrastructure-agnostic addressing. Whether our files live on my Dropbox, local NAS, some p2p-synced storage, or on my local disk, should be of secondary importance, and should not be included in addressing of the data.
+## Meadow is a visual information browser and organizer
 
-[^1]: Data has become a fully-fledged layer of our existence and there’s no indication that this is about to change.
+Meadow App is similar to a file manager, except it is not just for browsing the file system, but also other kinds of information sources, such as: your documents, photo albums, music Library, Web bookmarks and many others.
 
-Secondly, Wildland natively implements what we call [multi-categorization][multicat]. This means that every data container (the smallest unit of information on Wildland) can be assigned more than one address/path and can be accessed using any of them. Functionality-wise this is similar to having a directory on a traditional filesystem with multiple links, except that on Wildland every path is a first-class citizen. We believe that this feature is vital in making filesystems powerful enough to allow for their use as a primary tool for information and knowledge management. This is a broad and exciting topic and we will be talking more about it in future posts.
+Meadow is visually-oriented, presenting the user with a large board on which these information artifacts are placed. It is mostly a _browser_ rather than a content editor -- we recognize that people prefer to use whatever dedicated apps for actual content creation(be that a favorite Markdown editor, a specialized illustration app, a scribbling note-taking app, or an advanced math or music editor), rather than an one-for-all editor.
 
-Finally, the third highlight of this release is support for what we call [cascading addressing][addressing]. It can be thought of as an "upside-down DNS", or a bottom-up scalable addressing scheme which does not require any centralized authority, like predefined DNS root servers. It's important to note that this addressing scheme does not require any blockchain either.
+![Meadow is a visual browser for various types of information.](MeadowApp.png)
 
-## More footnotes
+## Meadow Containers are basic organizational units
 
-Another footnote.[^2] Since we often assume decentralization to be the only answer to ensuring data privacy, we have seen an emergence of many decentralized data storage projects, such as IPSF, Filecoin, Sia, and Safe Network. Wildland isn’t trying to compete with these projects. It aims to bring an aspect of functionality and [pragmatism to data storage decentralization](https://hackernoon.com/we-want-functional-decentralization-qanda-with-wildland-developers-ub2o31pt), by putting the emphasis on flexibility and enabling the user to use any infrastructure they wish and to switch seamlessly between different backends.
+Just like files and folders are the basic units we interact with when we use a file manager, in Meadow we generalize these concepts into what we call _Data Containers_. 
 
-[^2]:
-    We have the necessary [know-how][team], an experienced team and the resources needed to build a viable _alternative_ to the current service-based model of the Internet in which Big Tech companies can roam free.
+![Meadow Containers generalize the concept of files and folders.](MeadowContainers.png)
 
-    Another paragraph, but most importantly we have the interests of people like you at heart.
+What can be represented as a Meadow container? A folder and a file, of course. A PDF, ePUB or Markdown document, a chapter, sub-chapter, outline or section from such a document, as well as a single page or paragraph. A collection of all the photos, an album, a collection of all the photos take on a given month or day, and a specific single photo. A saved article from a read-later app, a collection of book highlights, a Web bookmark, or a history of all the Web sites visited last week. In other words: plenty of information types!
 
-It is important to remember here that decentralization within an organization itself comes with its own challenges. Firstly, people tend to be passive and often need an incentive to participate in the infrastructure-building process. Secondly, it can be difficult to determine who gets to decide on how the project should be advanced. There’s also the challenge of open source decentralized data storage projects being too niche which prevents them from becoming viable alternative solutions to bundled, closed and monetized services. This means there is a need to build a feasible economic framework to make Wildland a real alternative.
+Each of these containers might be nested within other containers, representing higher-order elements -- e.g. a PDF page container nested within PDF outline-representing contain, itself nested within PDF-representing container, this one placed within a folder-presenting container, and so on.
 
-## Text formatting
+![A hierarchy of nested containers representing a complex PDF document.](PDFContainer.png)
 
-With Wildland the user’s data is no longer stuck in a closed silo but stored in containers which can be easily moved between **different backends**, thanks to decoupling the addressing layer from the actual storage, and allowing for the creation of a bottom-up “organic” architecture. Making Wildland _faster_ -- primarily optimized mounting of large forests, as well as adding mechanisms for container content caching. This is a sample ~~strikethrough text~~.
+[^PdfContainer]: Of course a document such as a PDF is a file, so it can always be represented as a generic file-representing container. But by implementing a dedicated type of container for representing PDF documents, Meadow exposes the _structure_ of a PDF document in a form of sub-containers, representing PDF chapters and individual pages.
 
-## Ordered lists
+Representing all these types of data as standardized containers gives us flexibility in copying, linking, moving, and generally arranging in whatever custom structures we feel like.
 
-### With spacing
+This flexibility is one of the key benefits of Meadow. As otherwise we’re forced to accept whatever structures imposed on us by 3rd-party apps and websites.
 
-Aside from today's release of the client, we're also opening up for public read-only access [two Wildland forests][demo-forests] (a _forest_ is a namespace built around one user identity):
+![A workspace organized by topic at the top-level.](RootLandscape.png)
 
-1. The _Pandora_ forest (a reference to the Avatar movie), which is a repository of memos, reports, documents, etc, which we've been using internally to help us with Wildland's development. It's a bit like a shared Dropbox folder, except that it uses abstracted storage and heavily utilizes multi-categorization.
+## Multi-parenting: containers can be placed in more than one parent container
 
-2. The _Ariadne_ forest, which is a very small forest containing bridges to other forests, specifically to the Pandora forest, and some other, internal forests, which are encrypted and not exposed for public use.
+The ability to nest chunks of information within other, more high-level chunks, is a crucial mechanism to organize vast amounts of information in a meaningful way [^FsOrganizationPromise].
 
-### No spacing
+Otherwise, without structure, we can easily get overwhelmed with the vastness of information out there. And then we need to resort to 3rd parties for help: to search engines and/or AI assistants, so that these entities organize and manage the information _for_ us.[^DelegatingTo3rdParties]
 
-1. Sed venenatis arcu ac metus pharetra, nec aliquam libero scelerisque.
-2. Nullam sit amet dolor varius, aliquam neque sit amet, scelerisque tortor.
-3. Suspendisse eget lacus ultricies, vulputate erat vel, sodales erat.
-4. Nullam consequat libero in sodales hendrerit.
+![Flat vs structured organization of information.](Placeholder.png)
 
-### Nested
+[^FsOrganizationPromise]: A crucial feature of the good old filesystem has been that we could have created practically infinitely nested structures using folders. This has been a convenient mechanism to bring order to our large collection of files. Or so it seemed... In practice, however, most people have been using flat structures for storing files, typically putting all files within `Downloads/` or `Desktop/` folders ;-) This approach has become especially attractive in the recent years, thanks to the rise of sophisticated search tools, built into all mainstream operating systems.
 
-1. First main item
-   1. Sub-item 1
-   2. Sub-item 2
-2. Second main item
-   1. Sub-item A
-   2. Sub-item B
-      1. Sub-sub-item i
-      2. Sub-sub-item ii
-3. Third main item
+[^DelegatingTo3rdParties]: But when we delegate organization of our information landscape to a 3rd party we also give up ability to _understand_ what is out there. Sure enough, we can engage in a question-answer dialog with a search engine or an AI agent, but this hardly qualifies as understanding of what is out there.
 
-## Unordered lists
+[^FormingMentalPicture]: Sure enough, by asking many questions one can start forming a mental picture of what is out there, but this mental picture will surely have some structure, perhaps only represented in our neurons, not in the filesystem, but it won’t be a flat `Downloads/` folder.]
 
-There are more exciting things ahead of us which we plan to bring to you in the upcoming releases. These can be generally grouped into three areas:
+One of the prime reasons why traditional ways of organizing things into hierarchical structures can fail -- besides user’s laziness -- is the lack of flexibility the system can offer. One of the key design principle that we have been embracing since the early days of Wildland, is the _multi-parenting_ principle. It means that a container can be placed in more than one parent container. For example a container with a book about Geometry can be placed inside `Math`, `Books` and `Current study` containers. [^OrganizationExample]
 
-- Making Wildland _easier to use_ and set up. This means: better integration on various platforms, easy-to-use GUI, and -- last but not least -- an Ethereum-based marketplace for storage, followed by user-centered governance and GLM integration, as described in the [W2H paper][w2h].
+[^OrganizationExample]: And the `Math` container can be placed inside both `Science` and `Cognition` containers, both of which inside the `General Knowledge` container, while the `Current study` inside `Personal`.
 
-- Making Wildland _faster_ -- primarily optimized mounting of large forests, as well as adding mechanisms for container content caching.
+![Containers can be placed in more than one parent container.](MultiparentedContainer.png)
 
-- Making Wildland _more universal_, which includes better integration with more storage backends, integration with various data sources, as well as adding support for compute backends attached to containers, allowing them to actively process the data inside containers.
+## Human-friendly spatial presentation on large canvas
 
-Our ultimate goal is to provide a set of tools for a user to be able to better manage their digital universe of information. And do so on their own terms, rather than remaining dependent on large service providers to that on behalf of us all.
+Container nesting and multi-parenting are powerful tools which can bring order, but can also be abused to create obscure, convoluted, human-unfriendly structures.[^UnfriendlyDeepStructures]
 
-- Main item 1
-  - Sub-item A
-  - Sub-item B
-- Main item 2
-  - Sub-item X
-  - Sub-item Y
+[^UnfriendlyDeepStructures]: A traditional example of which might be very deep table-of-contents used in many academic or technical books.
 
-If you would like to try Wildland today, we suggest you start with [this introduction][intro], which is then followed by step-by-step tutorials on how to mount and explore the above-mentioned demo forests, as well as perform many other tasks using Wildland.
+To tackle this problem, Meadow relies on spatial presentation of information. A user is free to arrange and resize the containers however she feels on the canvas.
 
-## Task lists
+This spatial organization seamlessly conveys important additional information such as the (subjective) importance, (logical) order and relationships between containers. All in a very informal way.[^FormalApproaches]
 
-**Eligibility Criteria** are also essential, so make sure to review them to ensure that your project aligns with what's listed below.
+[^FormalApproaches]: This is in stark contrast with formal approaches to convey relationships, such as those used in Resource Description Framework. Couriousily, few formal formal approaches lets the user to assign indicators of (subjective) importance of data.] 
 
-- [x] Do you have a commitment to open-source (i.e. every open-source license accepted by the [Open-Source Initiative](https://opensource.org/licenses/)) technology and sharing results publicly?
-- [ ] Have you provided transparency about how exactly funding will be used?
-- [ ] Are you advancing values of freedom and privacy (no surveillance and handling of personal data)?
-- [ ] Are you supporting decentralization in various fields (for example building [Web3 projects](https://ethereum.org/en/web3/))?
-- [ ] Have you provided social media channels to the extent that we can confirm social proof of your project?
+![Spatial presentation seamlessly conveys information about importance and relations](SpatialArrangements.png)
 
-## Tables
+## Integrations for apps and services
 
-| Fruit      | Color  | Taste | Availability |
-| ---------- | ------ | ----- | ------------ |
-| Apple      | Red    | Sweet | Year-round   |
-| Banana     | Yellow | Sweet | Year-round   |
-| Orange     | Orange | Tangy | Winter       |
-| Grape      | Purple | Sweet | Year-round   |
-| Strawberry | Red    | Sweet | Summer       |
+We think that Meadow should be a window into the various islands of user’s information landscapes. Those islands which are created and managed by all sorts of apps and services we use all the time: photos-management apps, calendars, read-later apps, PKM apps, file storage services, music and film streaming services, and many more.
 
-## Code
+Accessing these islands of information require app- or service-specific integration plugins. We plan to write and publish many such plugins for popular apps and services in the coming months.[^And we also plan to make it possible for 3rd parties to write such plugins.] Right now there is only a few of these integrations available, which include: local filesystem, iCloud Drive, Apple Photos, Safari bookmarks integration (only on macOS). We also provide integrations which treat some data formats, such as PDF or Markdown files as providers of information landscapes, thus exposing e.g. a PDF document as a structure of chapter and page containers, nested within each other.
 
-If a user locks `100 GLM` at the beginning of Epoch One and later adds 1000 GLM in the middle of that epoch, their resulting voting power will be proportional to `600 GLM`.
+## Abstracting storage away
 
-```swift
-init(
-    sourceContainerID: ContainerID,
-    relativeURL: URL,
-    pathResolver: PathResolver,
-    name: String? = nil,
-    persistentContainers: PersistentContainers
-) throws
+While hiking over her unified landscape of information using the Meadow app, seamlessly jumping between various app- and web-created islands of information, a user might easily forget where all these information artifacts are actually stored... Some containers will be showing content from the local filesystem, others from cloud-based file storages, yet another ones presenting albums and photos from Apple Photos library, still others content extracted from Web services, either personalized, like read-later services, as well as general, such as Wikipedia articles on a specific topic.
+
+Indeed, that’s one of the stated goals of Meadow -- to _decouple_ the information from its underlying storage infrastructure, so that the user didn’t have to think: “in which app or service is the piece of information I need?”.
+
+![Abstracting storage away](Placeholder.png)
+
+## Leaving information on the original backends
+
+Being a _window_ into other micro-worlds created by other applications and services means that we don’t think about Meadow as of a “black hole” or a vault into which one puts all the valuable informations and locks them there. Meadow is different from most notes/PKM apps.[^WildlandStorage]
+
+![Obsidian and Meadow showing the content of the same folder.](Placeholder.png)
+
+Still, there is some amount of (meta-)information which Meadow needs to keep track of and store within its own database. These include information about (some of) the container’s additional relations (e.g. when a container is placed in more than one parent) as well as container’s placements on the canvas (board position coordinates and container dimensions). These meta-information Meadow stores within the local SQLite DB (accessible via Apple Core Data framework) and syncs between devices using iCloud’s CloudKit database. We will describe more of the technicalities related to how Meadow manages its state and storages in a separate, upcoming post.
+
+[^WildlandStorage]: Those who have been following our endeavors over the last 5 years might notice this “storage-less” approach to be quite different from what we have proposed in the original Wildland project. Wildland’s original goal was to additionally let the use connect various types of 3rd-party storages in order to keep these various islands of information on user-controlled storages (e.g. on user’s own S3 storage). This approach turned out to be more complex than we originally thought and so, about two years ago we have isolated these storage-related parts into a separate project called (Wildland) Cargo, which, however, we decided to discontinue last year.
+
+## Towards unified way of accessing and organizing of information
+
+```
+- Unification of various information carriers
+- Visual presentation of information and relations
+  - size and position/adjacency
+  - nesting
+- Flexible organization mechanisms
+  - simple nesting
+  - multi-parenting
+  - treating different types of information in the same way
+- Organization done by the user rather than content provider!
 ```
 
-## Images and videos
+## Current state & roadmap
 
-When I was introduced to the web3 space, I noticed numerous discussions about incentivizing people to join and participate in community projects. It sometimes sounds like a key solution to all problems - if we find the right incentives, everything will fall into place, and our project will be successful.
+```
+- Meadow is an app for Apple platform: macOS and iPadOS, iPhone coming soon. Metadata sync using iCloud.
+- In development for 15 months now
+- Demo movie
+- Signup for beta release info
+```
 
-Although I may not have extensive experience in technology, I believe I possess a solid understanding of how communities and social movements function, and how to engage people in supporting causes. Therefore, I've decided to share some thoughts on this topic.
-
-![Forest](forest.jpg)[^3]
-
-[^3]: Think of a wild forest, untouched by civilization. What do you feel?
-
-This says something really cool about humanity. We care about others and are happy to support them in need. We like to buy and get cool stuff, but sometimes we are even more excited about giving to see some meaningful change in the world. Or, if we can’t change the world, at least helping to change it for this one person or animal.
-
-<video src="/videos/video.mp4" controls></video>[^4]
-
-[^4]: Wildland is about more than simply offering an alternative: it’s about trying to change the whole paradigm.
-
-Most people associate crowdfunding with platforms such as Kickstarter, where certain niches, such as gaming, have integrated it into their business models, essentially pre-selling products during crowdfunding campaigns. This approach is intuitively appealing: the company receives funds while clients obtain products, aligning with conventional commerce expectations.
-
-[team]: https://wildland.io/team
-[w2h]: https://golem.foundation/resources/documents/wildland-w2h.pdf
-[intro]: https://docs.wildland.io/#a-practical-introduction-to-wildland
-[demo-forests]: https://docs.wildland.io/user-guide/public-forests.html
-[addressing]: https://docs.wildland.io/#container-addressing
-[multicat]: https://docs.wildland.io/#multi-categorization
