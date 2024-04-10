@@ -2,7 +2,7 @@ This is a website built on the [Astro](https://astro.build/) framework.
 
 ## Notes for Content Editors
 
-Blog posts are located in `/src/components/blog`.
+Blog posts are located in `/src/content/blog`.
 
 Each blog post is a Markdown file. It can be placed directly in the `blog` directory or contained within a subdirectory (this can be helpful if the blog post contains images).
 
