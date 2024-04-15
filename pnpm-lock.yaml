@@ -11,6 +11,9 @@ dependencies:
   '@astrojs/rss':
     specifier: ^4.0.5
     version: 4.0.5
+  '@astropub/md':
+    specifier: ^0.4.0
+    version: 0.4.0(@astrojs/markdown-remark@4.2.1)
   astro:
     specifier: ^4.4.1
     version: 4.4.1(sass@1.71.1)
@@ -105,6 +108,14 @@ packages:
 
   /@astrojs/underscore-redirects@0.3.3:
     resolution: {integrity: sha512-qDAKhFO4M1KzP7mxoJfiehf8oyf3EB158MxAa6z10NeD2pR3o4K3LlOQI8CfJgXE+BDBQcnaLvVCg/Mz/Gkg4Q==}
+    dev: false
+
+  /@astropub/md@0.4.0(@astrojs/markdown-remark@4.2.1):
+    resolution: {integrity: sha512-f0kJIfywRKLcVqlizqUPModBBuJ7WwBEIWJEt1Eq/ksSYixtOl8HQWMZKJhv9Xtc9OKHhkQf0AQc56EV1xNUnw==}
+    peerDependencies:
+      '@astrojs/markdown-remark': ^4
+    dependencies:
+      '@astrojs/markdown-remark': 4.2.1
     dev: false
 
   /@babel/code-frame@7.23.5:

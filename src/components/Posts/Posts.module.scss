@@ -28,6 +28,10 @@
   opacity: 0.75;
   margin-bottom: 1.2em;
   text-wrap: balance;
+
+  em {
+    font-weight: inherit;
+  }
 }
 
 .meta {

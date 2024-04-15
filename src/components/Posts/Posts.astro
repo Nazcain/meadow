@@ -1,6 +1,7 @@
 ---
 import Box from "@components/Box/Box.astro"
 import FomattedDate from "@components/Date/Date.astro"
+import { Markdown } from "@astropub/md"
 import styles from "./Posts.module.scss"
 
 let posts = await Astro.glob("@content/blog/**/*.md")
@@ -10,7 +11,7 @@ posts = posts.filter((post) => {
   }
 })
 posts.sort(
-  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date),
+  (a, b) => Date.parse(b.frontmatter.date) - Date.parse(a.frontmatter.date)
 )
 ---
 
@@ -26,7 +27,9 @@ posts.sort(
           {title}
           <i>→</i>
         </h3>
-        <p class={styles.description}>{shortDescription || description}</p>
+        <p class={styles.description}>
+          <Markdown.Inline of={shortDescription || description} />
+        </p>
         <p class={styles.meta}>
           <FomattedDate date={date} />
           <i />

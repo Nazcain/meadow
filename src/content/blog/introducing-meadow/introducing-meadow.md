@@ -4,14 +4,13 @@ date: 2024-04-10
 author: Joanna Rutkowska
 authorImage: https://golem.foundation/assets/img/team/joanna.jpg
 authorUrl: https://golem.foundation/team#joanna-rutkowska
-description: "This post presents a new tool - _Meadow_ - that we have been building at Golem Foundation over the last year."
-shortDescription: "This post presents a new tool - _Meadow_"
+description: "This post presents a new tool – _Meadow_ – that we have been building at Golem Foundation over the last year."
+shortDescription: "This post presents a new tool – _Meadow_"
 ---
 
-*Meadow* tries to be a tool to help people make better sense of the vast landscape of information which we’re all emerged within.[^Wildland]
+_Meadow_ tries to be a tool to help people make better sense of the vast landscape of information which we’re all emerged within.[^Wildland]
 
 [^Wildland]: Meadow conceptually belongs into the wider initiative under the umbrella name _Wildland_ -- a set of ideas and projects we’ve been researching and developing at the Golem Foundation over the last 5 years. Still, Meadow is a standalone product, not dependent on any of the previous software we released before.
-
 
 ## Meadow is a visual information browser and organizer
 
@@ -23,7 +22,7 @@ Meadow is visually-oriented, presenting the user with a large board on which the
 
 ## Meadow Containers are basic organizational units
 
-Just like files and folders are the basic units we interact with when we use a file manager, in Meadow we generalize these concepts into what we call _Data Containers_. 
+Just like files and folders are the basic units we interact with when we use a file manager, in Meadow we generalize these concepts into what we call _Data Containers_.
 
 ![Meadow Containers generalize the concept of files and folders.](MeadowContainers.png)
 
@@ -50,9 +49,7 @@ Otherwise, without structure, we can easily get overwhelmed with the vastness of
 ![Flat vs structured organization of information.](Placeholder.png)
 
 [^FsOrganizationPromise]: A crucial feature of the good old filesystem has been that we could have created practically infinitely nested structures using folders. This has been a convenient mechanism to bring order to our large collection of files. Or so it seemed... In practice, however, most people have been using flat structures for storing files, typically putting all files within `Downloads/` or `Desktop/` folders ;-) This approach has become especially attractive in the recent years, thanks to the rise of sophisticated search tools, built into all mainstream operating systems.
-
 [^DelegatingTo3rdParties]: But when we delegate organization of our information landscape to a 3rd party we also give up ability to _understand_ what is out there. Sure enough, we can engage in a question-answer dialog with a search engine or an AI agent, but this hardly qualifies as understanding of what is out there.
-
 [^FormingMentalPicture]: Sure enough, by asking many questions one can start forming a mental picture of what is out there, but this mental picture will surely have some structure, perhaps only represented in our neurons, not in the filesystem, but it won’t be a flat `Downloads/` folder.]
 
 One of the prime reasons why traditional ways of organizing things into hierarchical structures can fail -- besides user’s laziness -- is the lack of flexibility the system can offer. One of the key design principle that we have been embracing since the early days of Wildland, is the _multi-parenting_ principle. It means that a container can be placed in more than one parent container. For example a container with a book about Geometry can be placed inside `Math`, `Books` and `Current study` containers. [^OrganizationExample]
@@ -71,7 +68,7 @@ To tackle this problem, Meadow relies on spatial presentation of information. A 
 
 This spatial organization seamlessly conveys important additional information such as the (subjective) importance, (logical) order and relationships between containers. All in a very informal way.[^FormalApproaches]
 
-[^FormalApproaches]: This is in stark contrast with formal approaches to convey relationships, such as those used in Resource Description Framework. Couriousily, few formal formal approaches lets the user to assign indicators of (subjective) importance of data.] 
+[^FormalApproaches]: This is in stark contrast with formal approaches to convey relationships, such as those used in Resource Description Framework. Couriousily, few formal formal approaches lets the user to assign indicators of (subjective) importance of data.]
 
 ![Spatial presentation seamlessly conveys information about importance and relations](SpatialArrangements.png)
 
@@ -121,4 +118,3 @@ Still, there is some amount of (meta-)information which Meadow needs to keep tra
 - Demo movie
 - Signup for beta release info
 ```
-

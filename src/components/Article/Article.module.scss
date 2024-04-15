@@ -49,6 +49,10 @@
   line-height: 1.4;
   color: rgba(var(--text-color-rgb), 0.75);
 
+  em {
+    font-weight: inherit;
+  }
+
   @include media(">=tablet") {
     font-size: 22px;
   }
