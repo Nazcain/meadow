@@ -52,6 +52,7 @@ export function setupImageCaptions() {
     const figure = document.createElement("figure")
     const figcaption = document.createElement("figcaption")
     figcaption.innerHTML = caption.innerHTML
+    img.title = caption.textContent
     figure.append(img)
     figure.append(figcaption)
     p.after(figure)
