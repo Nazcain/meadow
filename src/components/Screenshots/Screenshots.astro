@@ -31,7 +31,7 @@ const images = [screenshot1, screenshot2, screenshot3]
 <script>
   import lightGallery from "lightgallery"
 
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     lightGallery(document.querySelector("[data-screenshots]"), {
       startAnimationDuration: 300,
       download: false,

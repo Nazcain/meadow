@@ -11,6 +11,5 @@ Meadow App is an implementation of many of the concepts envisioned as part of th
 
 Meadow’s UX design has been heavily influenced by the following excellent apps: Bear and Muse. In an ideal world, where all the software was open source, Meadow would simply build on top of these excellent apps only adding features such as pluggable storage backends and auto-generated containers. Sadly, in our non-ideal world these apps turned out to be proprietary software and so Meadow’s lots of effort has been spent on re-implementing large parts of their functionalities. Meadow is going to be an open source software, once it’s first public bets is released.
 
-[![Architecture](/images/architecture.png)](/images/architecture.png)[^2]
-
-[^2]: Meadow’s high-level architecture
+![Architecture](architecture.png)
+_Meadow’s high-level architecture_

@@ -1,3 +1,5 @@
+import lightGallery from "lightgallery"
+
 export function setupFootnotes() {
   const footnoteLinks = document.querySelectorAll("[data-footnote-ref]")
   const footerFootnotes = document.querySelector("[data-footnotes]")
@@ -42,7 +44,7 @@ export function setupFootnotes() {
   }
 }
 
-export function setupImages() {
+export function setupImageCaptions() {
   const captions = document.querySelectorAll("p > img + em")
   captions.forEach((caption) => {
     const p = caption.parentElement
@@ -54,6 +56,28 @@ export function setupImages() {
     figure.append(figcaption)
     p.after(figure)
     p.remove()
+  })
+}
+
+export function setupImageLinks() {
+  const images = document.querySelectorAll("img:not([class])")
+  images.forEach((image) => {
+    const p = image.parentElement
+    const link = document.createElement("a")
+    link.href = image.src
+    link.setAttribute(
+      "data-lg-size",
+      `${image.getAttribute("width")}-${image.getAttribute("height")}`
+    )
+    link.appendChild(image.cloneNode(true))
+    image.parentNode.replaceChild(link, image)
+
+    lightGallery(link, {
+      startAnimationDuration: 300,
+      download: false,
+      counter: false,
+      // container: link,
+    })
   })
 }
 

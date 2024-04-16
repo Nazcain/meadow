@@ -2,6 +2,7 @@
 import FomattedDate from "@components/Date/Date.astro"
 import { Markdown } from "@astropub/md"
 import styles from "./Article.module.scss"
+import "lightgallery/css/lightgallery.css"
 
 const { title, description, date, author, authorImage } = Astro.props
 ---
@@ -29,8 +30,13 @@ const { title, description, date, author, authorImage } = Astro.props
 </article>
 
 <script>
-  import { setupFootnotes, setupImages } from "@scripts/article"
+  import {
+    setupFootnotes,
+    setupImageCaptions,
+    setupImageLinks,
+  } from "@scripts/article"
 
   setupFootnotes()
-  setupImages()
+  setupImageCaptions()
+  setupImageLinks()
 </script>
