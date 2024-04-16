@@ -12,9 +12,9 @@
   }
 
   @include media(">=desktop") {
-    @media (max-width: 1340px) {
+    @media (max-width: 1440px) {
       &:has(:global(.sidenote)) {
-        margin-right: calc(var(--sidenote-width) + var(--column-spacing));
+        // margin-right: calc(var(--sidenote-width) + var(--column-spacing));
       }
     }
   }

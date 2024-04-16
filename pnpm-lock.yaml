@@ -20,6 +20,9 @@ dependencies:
   autoprefixer:
     specifier: ^10.4.17
     version: 10.4.17(postcss@8.4.35)
+  fontfaceobserver:
+    specifier: ^2.3.0
+    version: 2.3.0
   lightgallery:
     specifier: ^2.7.2
     version: 2.7.2
@@ -1531,6 +1534,10 @@ packages:
   /flattie@1.1.0:
     resolution: {integrity: sha512-xU99gDEnciIwJdGcBmNHnzTJ/w5AT+VFJOu6sTB6WM8diOYNA3Sa+K1DiEBQ7XH4QikQq3iFW1U+jRVcotQnBw==}
     engines: {node: '>=8'}
+    dev: false
+
+  /fontfaceobserver@2.3.0:
+    resolution: {integrity: sha512-6FPvD/IVyT4ZlNe7Wcn5Fb/4ChigpucKYSvD6a+0iMoLn2inpo711eyIcKjmDtE5XNcgAkSH9uN/nfAeZzHEfg==}
     dev: false
 
   /fraction.js@4.3.7:

@@ -2,28 +2,30 @@ em {
   font-weight: 600;
 }
 
-// sup {
-//   position: relative;
-//   font-size: 0.75em;
-//   line-height: 0;
-//   vertical-align: baseline;
-//   top: -0.4em;
+sup {
+  margin-left: 0.3em;
+  position: relative;
+  font-size: 0.75em;
+  line-height: 0;
+  vertical-align: baseline;
+  top: -0.4em;
 
-//   a {
-//     display: inline-block;
-//     padding: 8px 6px;
-//     background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
-//     border-radius: 3px;
-//     font-weight: 500;
-//     // font-family: monospace;
-//     color: var(--accent-color);
+  a {
+    display: inline-block;
+    padding: 10px 6px;
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
+    border-radius: 3px;
+    font-weight: 500;
+    // font-family: monospace;
+    color: var(--accent-color);
+    // cursor: default;
 
-//     &:hover {
-//       background-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
-//       // color: var(--black);
-//     }
-//   }
-// }
+    &:hover {
+      background-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
+      // color: var(--black);
+    }
+  }
+}
 
 p,
 ol,
@@ -276,20 +278,46 @@ tbody tr:last-child {
 }
 
 .sidenote {
+  position: relative;
   // text-wrap: balance;
-  font-size: 14px;
+  font-size: 13px;
   line-height: 1.4;
   color: rgba(var(--text-color-rgb), 0.75);
+  transition: color 0.1s;
+
+  &::before {
+    content: attr(data-label) ".";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    // font-weight: 500;
+    // font-family: monospace;
+    color: rgba(var(--text-color-rgb), 0.5);
+    transition: inherit;
+  }
 
   p:not(:last-child) {
     margin-bottom: 0.8em;
   }
 
-  @include media("<tablet") {
-    margin-bottom: 2em;
+  &.-highlighted {
+    color: var(--text-color);
+
+    &::before {
+      color: var(--accent-color);
+    }
   }
 
-  @include media(">=desktop") {
+  @media (max-width: 1259px) {
+    margin-bottom: 2em;
+    padding-left: 20px;
+
+    &::before {
+      left: 0;
+    }
+  }
+
+  @media (min-width: 1260px) {
     width: var(--sidenote-width);
     // padding: 30px;
     position: absolute;
@@ -297,5 +325,20 @@ tbody tr:last-child {
     left: calc(100% + var(--column-spacing));
     // background-color: rgba(0, 0, 0, 0.04);
     // border-radius: 10px;
+    font-size: 14px;
+
+    &.-left {
+      left: calc(var(--sidenote-width) * -1 - var(--column-spacing));
+    }
+
+    @media (max-width: 1390px) {
+      --sidenote-width: 220px;
+      --column-spacing: 50px;
+    }
+
+    @media (max-width: 1300px) {
+      --sidenote-width: 200px;
+      --column-spacing: 40px;
+    }
   }
 }

@@ -29,8 +29,23 @@ const { title, description, date, author, authorImage } = Astro.props
 </article>
 
 <script>
+  // import { inter } from "@scripts/fontObserver"
+
   const footnoteLinks = document.querySelectorAll("[data-footnote-ref]")
   const footerFootnotes = document.querySelector("[data-footnotes]")
+
+  // function repositionSidenotes() {
+  //   const sidenotes = document.querySelectorAll(".sidenote")
+
+  //   for (let i = 0; i < sidenotes.length; i++) {
+  //     var sidenote = sidenotes[i]
+  //     console.log(sidenote)
+
+  //     if (false) {
+  //       break
+  //     }
+  //   }
+  // }
 
   footnoteLinks.forEach((link) => {
     const parent = link.closest("p, ul, ol")
@@ -40,17 +55,39 @@ const { title, description, date, author, authorImage } = Astro.props
     }
     const container = document.createElement("div")
     const sidenote = document.createElement("div")
+    const label = link.textContent
+    const isLeft = link.id.includes("left")
     container.classList.add("sidenote-container")
     sidenote.classList.add("sidenote")
+    if (isLeft) {
+      sidenote.classList.add("-left")
+    }
     sidenote.innerHTML = contentEl.innerHTML
+    sidenote.dataset.label = label
     sidenote.querySelector("[data-footnote-backref]").remove()
     parent.parentNode.insertBefore(container, parent)
     container.append(parent)
     container.append(sidenote)
-    link.closest("sup").remove()
+    // link.closest("sup").remove()
+
+    link.addEventListener("mouseenter", () => {
+      sidenote.classList.add("-highlighted")
+    })
+
+    link.addEventListener("mouseleave", () => {
+      sidenote.classList.remove("-highlighted")
+    })
+
+    link.addEventListener("click", (e) => {
+      e.preventDefault()
+    })
   })
 
   if (footerFootnotes) {
     footerFootnotes.remove()
   }
+
+  // inter.load().then(() => {
+  //   repositionSidenotes()
+  // })
 </script>
