@@ -2,6 +2,7 @@
 
 .el {
   img:not([class]),
+  figure,
   video {
     display: block;
     height: auto;
@@ -17,12 +18,34 @@
     max-width: 100%;
   }
 
+  figure {
+    img:not([class]) {
+      margin: 0;
+    }
+  }
+
+  figcaption {
+    display: block;
+    margin-top: 16px;
+    text-align: center;
+    font-style: italic;
+    font-size: 13px;
+    line-height: 1.4;
+    color: rgba(var(--text-color-rgb), 0.75);
+  }
+
   @include media("<tablet") {
     :global(.sidenote-container) > p {
       > img:not([class]),
       > video {
         margin-bottom: -0.8em;
       }
+    }
+  }
+
+  @media (min-width: 1260px) {
+    figcaption {
+      font-size: 14px;
     }
   }
 }

@@ -15,7 +15,6 @@
     "@astropub/md": "^0.4.0",
     "astro": "^4.4.1",
     "autoprefixer": "^10.4.17",
-    "fontfaceobserver": "^2.3.0",
     "lightgallery": "^2.7.2",
     "sass": "^1.71.1"
   }
