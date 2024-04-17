@@ -301,14 +301,6 @@ tbody tr:last-child {
       }
     }
 
-    &.-left {
-      left: calc(var(--sidenote-width) * -1 - var(--column-spacing));
-
-      &.-highlighted {
-        transform: translateX(5px);
-      }
-    }
-
     @media (max-width: 1390px) {
       --sidenote-width: 220px;
       --column-spacing: 50px;

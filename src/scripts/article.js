@@ -13,12 +13,8 @@ export function setupFootnotes() {
     const container = document.createElement("div")
     const sidenote = document.createElement("div")
     const label = link.textContent
-    const isLeft = link.id.includes("left")
     container.classList.add("sidenote-container")
     sidenote.classList.add("sidenote")
-    if (isLeft) {
-      sidenote.classList.add("-left")
-    }
     sidenote.innerHTML = contentEl.innerHTML
     sidenote.dataset.label = label
     sidenote.querySelector("[data-footnote-backref]").remove()

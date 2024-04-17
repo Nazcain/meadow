@@ -48,13 +48,13 @@ _A workspace organized by topic at the top-level._
 
 The ability to nest chunks of information within other, more high-level chunks, is a crucial mechanism to organize vast amounts of information in a meaningful way.[^FsOrganizationPromise]
 
-Otherwise, without structure, we can easily get overwhelmed with the vastness of information out there. And then we need to resort to 3rd parties for help: to search engines and/or AI assistants, so that these entities organize and manage the information _for_ us.[^DelegatingTo3rdPartiesLeft]
+Otherwise, without structure, we can easily get overwhelmed with the vastness of information out there. And then we need to resort to 3rd parties for help: to search engines and/or AI assistants, so that these entities organize and manage the information _for_ us.[^DelegatingTo3rdParties]
 
 ![](Placeholder.png)
 _Flat vs structured organization of information._
 
 [^FsOrganizationPromise]: A crucial feature of the good old filesystem has been that we could have created practically infinitely nested structures using folders. This has been a convenient mechanism to bring order to our large collection of files. Or so it seemed... In practice, however, most people have been using flat structures for storing files, typically putting all files within `Downloads/` or `Desktop/` folders ;-) This approach has become especially attractive in the recent years, thanks to the rise of sophisticated search tools, built into all mainstream operating systems.
-[^DelegatingTo3rdPartiesLeft]: But when we delegate organization of our information landscape to a 3rd party we also give up ability to _understand_ what is out there. Sure enough, we can engage in a question-answer dialog with a search engine or an AI agent, but this hardly qualifies as understanding of what is out there.
+[^DelegatingTo3rdParties]: But when we delegate organization of our information landscape to a 3rd party we also give up ability to _understand_ what is out there. Sure enough, we can engage in a question-answer dialog with a search engine or an AI agent, but this hardly qualifies as understanding of what is out there.
 [^FormingMentalPicture]: Sure enough, by asking many questions one can start forming a mental picture of what is out there, but this mental picture will surely have some structure, perhaps only represented in our neurons, not in the filesystem, but it won’t be a flat `Downloads/` folder.
 
 One of the prime reasons why traditional ways of organizing things into hierarchical structures can fail -- besides user’s laziness -- is the lack of flexibility the system can offer. One of the key design principle that we have been embracing since the early days of Wildland, is the _multi-parenting_ principle. It means that a container can be placed in more than one parent container. For example a container with a book about Geometry can be placed inside `Math`, `Books` and `Current study` containers. [^OrganizationExample]
