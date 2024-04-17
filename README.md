@@ -1,6 +1,16 @@
 This is a website built on the [Astro](https://astro.build/) framework.
 
-## Notes for Content Editors
+## Content Editing Guide
+
+### Homepage
+
+Homepage content can be edited in `/src/pages/index.astro`.
+
+### About Page
+
+About page content can be edited in `/src/pages/about/index.md`.
+
+### Blog
 
 Blog posts are located in `/src/content/blog`.
 
@@ -11,6 +21,10 @@ The names of subdirectories are only used for organizational purposes. The name 
 Images should be placed in subdirectories with the Markdown files. This way, they are processed and optimized for better performance.
 
 Posts are sorted by date, which can be specified in the `date` field in the Markdown file. You can set a future date to make the post a draft (it won’t be displayed on the blog).
+
+### Footer
+
+Footer links can be edited in `/src/pages/about/index.md`.
 
 ## Local Development
 
