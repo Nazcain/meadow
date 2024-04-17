@@ -1,29 +1,53 @@
 ---
 import Container from "@components/Container/Container.astro"
 import styles from "./Footer.module.scss"
+
+const menu = [
+  {
+    title: "Home",
+    url: "/",
+  },
+  {
+    title: "About",
+    url: "/about",
+  },
+  {
+    title: "Quick start guide",
+    url: "https://web.dev",
+    external: true,
+  },
+  {
+    title: "User docs",
+    url: "https://web.dev",
+    external: true,
+  },
+  {
+    title: "Developer docs",
+    url: "https://web.dev",
+    external: true,
+  },
+]
+
+const copyrightText = "Golem Foundation, Zug, Switzerland"
 ---
 
 <footer class={styles.el}>
   <Container>
     <ul class={styles.menu}>
-      <li>
-        <a class={styles.menuLink} href="/">Home</a>
-      </li>
-      <li>
-        <a class={styles.menuLink} href="/about">About</a>
-      </li>
-      <li>
-        <a class={styles.menuLink} href="#">Quick start guide<i>↗</i></a>
-      </li>
-      <li>
-        <a class={styles.menuLink} href="#">User docs<i>↗</i></a>
-      </li>
-      <li>
-        <a class={styles.menuLink} href="#">Developer docs<i>↗</i></a>
-      </li>
+      {
+        menu.map(({ title, url, external }) => (
+          <li>
+            <a class={styles.menuLink} href={url}>
+              {title}
+              {external && <i>↗</i>}
+            </a>
+          </li>
+        ))
+      }
     </ul>
     <p class={styles.copyright}>
-      © {new Date().getFullYear()} Golem Foundation, Zug, Switzerland
+      © {new Date().getFullYear()}
+      {copyrightText}
     </p>
     <div class={styles.themeSwitcher}>
       <button class={styles.themeSwitcherButton} data-theme-switcher="light"
