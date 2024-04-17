@@ -133,7 +133,7 @@ Although I may not have extensive experience in technology, I believe I possess 
 
 This says something really cool about humanity. We care about others and are happy to support them in need. We like to buy and get cool stuff, but sometimes we are even more excited about giving to see some meaningful change in the world. Or, if we can’t change the world, at least helping to change it for this one person or animal.
 
-<video src="/videos/video.mp4" controls></video>[^4]
+<video src="/videos/test-video.mp4" controls></video>[^4]
 
 [^4]: Wildland is about more than simply offering an alternative: it’s about trying to change the whole paradigm.
 
