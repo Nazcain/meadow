@@ -18,7 +18,7 @@ Meadow App is similar to a file manager, except it is not just for browsing the 
 
 Meadow is visually-oriented, presenting the user with a large board on which these information artifacts are placed. It is mostly a _browser_ rather than a content editor -- we recognize that people prefer to use whatever dedicated apps for actual content creation(be that a favorite Markdown editor, a specialized illustration app, a scribbling note-taking app, or an advanced math or music editor), rather than an one-for-all editor.
 
-![](MeadowApp.png)
+![Meadow app screenshot](MeadowApp.png)
 _Meadow is a visual browser for various types of information._
 
 ## Meadow Containers are basic organizational units
