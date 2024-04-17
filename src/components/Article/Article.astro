@@ -4,7 +4,7 @@ import { Markdown } from "@astropub/md"
 import styles from "./Article.module.scss"
 import "lightgallery/css/lightgallery.css"
 
-const { title, description, date, author, authorImage } = Astro.props
+const { title, description, date, author, authorImage, authorUrl } = Astro.props
 ---
 
 <article class={styles.el}>
@@ -18,10 +18,29 @@ const { title, description, date, author, authorImage } = Astro.props
         <p class={styles.meta}>
           <FomattedDate date={date} />
           <i />
-          {authorImage && (
-            <img class={styles.authorImage} src={authorImage} alt={author} />
+          {authorUrl ? (
+            <a class={styles.authorLink} href={authorUrl}>
+              {authorImage && (
+                <img
+                  class={styles.authorImage}
+                  src={authorImage}
+                  alt={author}
+                />
+              )}
+              {author}
+            </a>
+          ) : (
+            <>
+              {authorImage && (
+                <img
+                  class={styles.authorImage}
+                  src={authorImage}
+                  alt={author}
+                />
+              )}
+              {author}
+            </>
           )}
-          {author}
         </p>
       </header>
     )

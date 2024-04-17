@@ -102,6 +102,18 @@
   }
 }
 
+.authorLink {
+  display: flex;
+  align-items: center;
+  gap: 1em;
+  text-decoration: none;
+  transition: color 0.15s;
+
+  &:hover {
+    color: var(--text-color);
+  }
+}
+
 .authorImage {
   --size: 30px;
   // display: none;
