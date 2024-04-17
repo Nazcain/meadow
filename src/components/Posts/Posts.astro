@@ -23,10 +23,10 @@ posts.sort(
     } = post
     return (
       <Box type="plain" href={`/${slug}`}>
-        <h3 class={styles.title}>
+        <h2 class={styles.title}>
           {title}
           <i>→</i>
-        </h3>
+        </h2>
         <p class={styles.description}>
           <Markdown.Inline of={shortDescription || description} />
         </p>
