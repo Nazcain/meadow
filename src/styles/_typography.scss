@@ -16,13 +16,10 @@ sup {
     background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
     border-radius: 3px;
     font-weight: 500;
-    // font-family: monospace;
     color: var(--accent-color);
-    // cursor: default;
 
     &:hover {
       background-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
-      // color: var(--black);
     }
   }
 }
@@ -41,8 +38,6 @@ a:not([class]):not(sup a),
   text-decoration-thickness: 1px;
   text-decoration-color: rgba(var(--link-color-rgb), 0.5);
   text-underline-offset: 2px;
-  // font-weight: 500;
-  // color: var(--link-color);
   transition: 0.15s;
   transition-property: text-decoration-color, color;
 
@@ -64,7 +59,6 @@ a:not([class]):not(sup a),
   &:hover,
   a:hover & {
     text-decoration-color: rgba(var(--link-color-rgb), 0.75);
-    // text-decoration-thickness: 2px;
     color: var(--link-color);
 
     i {
@@ -103,20 +97,6 @@ ol {
       position: absolute;
       top: 6px;
       left: 0;
-    }
-  }
-}
-
-ul {
-  &:not([class]) {
-    // list-style-position: inside;
-    // margin-left: 0;
-
-    li {
-      &::marker {
-        // font-size: 0.8em;
-        // color: var(--accent-color);
-      }
     }
   }
 }
@@ -197,7 +177,6 @@ code {
     background-color: rgba(var(--text-color-max-contrast-rgb), 0.04) !important;
     border-radius: 5px;
     font-family: monospace;
-    // color: #24292e;
   }
 }
 
@@ -279,7 +258,6 @@ tbody tr:last-child {
 
 .sidenote {
   position: relative;
-  // text-wrap: balance;
   font-size: 13px;
   line-height: 1.4;
   color: rgba(var(--text-color-rgb), 0.75);
@@ -290,8 +268,6 @@ tbody tr:last-child {
     position: absolute;
     top: 0;
     left: -20px;
-    // font-weight: 500;
-    // font-family: monospace;
     color: rgba(var(--text-color-rgb), 0.5);
     transition: inherit;
   }
@@ -319,12 +295,9 @@ tbody tr:last-child {
 
   @media (min-width: 1260px) {
     width: var(--sidenote-width);
-    // padding: 30px;
     position: absolute;
     top: 0;
     left: calc(100% + var(--column-spacing));
-    // background-color: rgba(0, 0, 0, 0.04);
-    // border-radius: 10px;
     font-size: 14px;
 
     &.-left {

@@ -2,10 +2,7 @@
 import { Image } from "astro:assets"
 import styles from "./Screenshots.module.scss"
 import "lightgallery/css/lightgallery.css"
-import screenshot1 from "@assets/screenshots/1.png"
-import screenshot2 from "@assets/screenshots/2.png"
-import screenshot3 from "@assets/screenshots/3.png"
-const images = [screenshot1, screenshot2, screenshot3]
+const { images } = Astro.props
 ---
 
 <div class={styles.el} data-screenshots>

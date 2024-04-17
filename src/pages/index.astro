@@ -2,9 +2,31 @@
 import Layout from "@layouts/Main.astro"
 import Posts from "@components/Posts/Posts.astro"
 import Sidebar from "@components/Sidebar/Sidebar.astro"
+import screenshot1 from "@assets/screenshots/1.png"
+import screenshot2 from "@assets/screenshots/2.png"
+import screenshot3 from "@assets/screenshots/3.png"
+
+const aboutText =
+  "Meadow is designed to enhance cognitive abilities by providing a robust system for organizing diverse information surrounding a particular topic."
+const downloadLinks = [
+  {
+    title: "App Store",
+    url: "https://apple.com/xyz",
+  },
+  {
+    title: "GitLab",
+    url: "https://gitlab.com/xyz",
+  },
+]
+const screenshots = [screenshot1, screenshot2, screenshot3]
 ---
 
 <Layout title="Meadow">
   <Posts slot="main" />
-  <Sidebar slot="sidebar" />
+  <Sidebar
+    slot="sidebar"
+    aboutText={aboutText}
+    downloadLinks={downloadLinks}
+    screenshots={screenshots}
+  />
 </Layout>

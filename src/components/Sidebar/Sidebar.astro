@@ -3,22 +3,23 @@ import Box from "@components/Box/Box.astro"
 import Download from "@components/Download/Download.astro"
 import Screenshots from "@components/Screenshots/Screenshots.astro"
 import styles from "./Sidebar.module.scss"
+
+const { aboutText, downloadLinks, screenshots } = Astro.props
 ---
 
 <div class={styles.el}>
   <Box title="About" href="/about">
     <p>
-      Meadow is designed to enhance cognitive abilities by providing a robust
-      system for organizing diverse information surrounding a particular topic.
+      {aboutText}
     </p>
     <p>
       <span class="link">Learn more<i>→</i></span>
     </p>
   </Box>
   <Box title="Download">
-    <Download />
+    <Download links={downloadLinks} />
   </Box>
   <Box title="Screenshots">
-    <Screenshots />
+    <Screenshots images={screenshots} />
   </Box>
 </div>

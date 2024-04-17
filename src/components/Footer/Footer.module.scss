@@ -3,7 +3,6 @@
 .el {
   margin-top: 60px;
   padding: 60px 0;
-  // background-color: #f1eee7;
   border-top: 1px solid var(--border-color);
   text-align: center;
   font-size: 14px;
@@ -54,7 +53,6 @@
   justify-content: center;
   align-items: center;
   gap: 12px;
-  // margin-top: 1.5em;
   color: rgba(var(--text-color-rgb), 0.4);
 }
 
@@ -64,10 +62,6 @@
   :global(.theme-light) &[data-theme-switcher="light"],
   :global(.theme-dark) &[data-theme-switcher="dark"],
   &:hover {
-    // text-decoration: underline;
-    // text-decoration-thickness: 1px;
-    // text-decoration-color: rgba(var(--link-color-rgb), 0.5);
-    // text-underline-offset: 2px;
     color: rgba(var(--text-color-rgb), 0.75);
   }
 }

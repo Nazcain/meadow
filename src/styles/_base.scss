@@ -44,7 +44,6 @@
 
   @media (prefers-color-scheme: dark) {
     &:not(.theme-light) {
-      // avoid flash of white
       @include dark-mode-styles();
     }
   }
@@ -72,9 +71,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   cursor: default;
-  // -webkit-tap-highlight-color: transparent;
   touch-action: manipulation; // disable double-tap zoom
-  // overscroll-behavior: none;
 }
 
 ::selection {

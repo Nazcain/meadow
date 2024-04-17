@@ -10,12 +10,4 @@
   &_small {
     --container-width: var(--container-width-small);
   }
-
-  @include media(">=desktop") {
-    @media (max-width: 1440px) {
-      &:has(:global(.sidenote)) {
-        // margin-right: calc(var(--sidenote-width) + var(--column-spacing));
-      }
-    }
-  }
 }

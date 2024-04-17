@@ -1,7 +1,6 @@
 @import "@styles/shared";
 
 .el {
-  // margin-bottom: 20px;
   padding: 30px;
   border-radius: 10px;
   transition: 0.15s;
@@ -11,19 +10,10 @@
     --bg-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
     --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.08);
     background-color: var(--bg-color);
-
-    :global(.theme-dark) & {
-      // --bg-color: rgba(var(--text-color-max-contrast-rgb), 0.05);
-      // --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.09);
-    }
   }
 
   &_plain {
     --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
-
-    :global(.theme-dark) & {
-      // --hover-bg-color: rgba(var(--text-color-max-contrast-rgb), 0.05);
-    }
   }
 
   @include media("<tablet") {

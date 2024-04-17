@@ -45,15 +45,21 @@ export function setupFootnotes() {
 }
 
 export function setupImageCaptions() {
-  const captions = document.querySelectorAll("p > img + em")
+  const captions = document.querySelectorAll("p > img + em, p > video + em")
   captions.forEach((caption) => {
     const p = caption.parentElement
     const img = p.querySelector("img")
+    const video = p.querySelector("video")
     const figure = document.createElement("figure")
     const figcaption = document.createElement("figcaption")
     figcaption.innerHTML = caption.innerHTML
-    img.title = caption.textContent
-    figure.append(img)
+    if (img) {
+      img.title = caption.textContent
+      figure.append(img)
+    }
+    if (video) {
+      figure.append(video)
+    }
     figure.append(figcaption)
     p.after(figure)
     p.remove()

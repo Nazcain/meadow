@@ -10,16 +10,13 @@
     border-radius: 10px;
   }
 
-  h3 + p > img:not([class]):first-child {
-    // margin-top: calc(var(--base-line-height) * 1em);
-  }
-
   video {
     max-width: 100%;
   }
 
   figure {
-    img:not([class]) {
+    img:not([class]),
+    video:not([class]) {
       margin: 0;
     }
   }
@@ -67,7 +64,6 @@
 
 .description {
   margin-top: 0.8em;
-  // font-weight: 400;
   font-size: 18px;
   line-height: 1.4;
   color: rgba(var(--text-color-rgb), 0.75);
@@ -116,11 +112,8 @@
 
 .authorImage {
   --size: 30px;
-  // display: none;
   width: var(--size);
   height: var(--size);
   object-fit: cover;
   border-radius: 50%;
-  // clip-path: url(/images/squircle.svg#clip-squircle);
-  // -webkit-mask: url(/images/squircle.svg#clip-squircle);
 }

@@ -127,15 +127,13 @@ When I was introduced to the web3 space, I noticed numerous discussions about in
 
 Although I may not have extensive experience in technology, I believe I possess a solid understanding of how communities and social movements function, and how to engage people in supporting causes. Therefore, I've decided to share some thoughts on this topic.
 
-![Forest](forest.jpg)[^3]
-
-[^3]: Think of a wild forest, untouched by civilization. What do you feel?
+![Forest](forest.jpg)
+_Think of a wild forest, untouched by civilization. What do you feel?_
 
 This says something really cool about humanity. We care about others and are happy to support them in need. We like to buy and get cool stuff, but sometimes we are even more excited about giving to see some meaningful change in the world. Or, if we can’t change the world, at least helping to change it for this one person or animal.
 
-<video src="/videos/test-video.mp4" controls></video>[^4]
-
-[^4]: Wildland is about more than simply offering an alternative: it’s about trying to change the whole paradigm.
+<video src="/videos/test-video.mp4" controls></video>
+_Wildland is about more than simply offering an alternative: it’s about trying to change the whole paradigm._
 
 Most people associate crowdfunding with platforms such as Kickstarter, where certain niches, such as gaming, have integrated it into their business models, essentially pre-selling products during crowdfunding campaigns. This approach is intuitively appealing: the company receives funds while clients obtain products, aligning with conventional commerce expectations.
 
