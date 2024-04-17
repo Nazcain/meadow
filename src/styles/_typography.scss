@@ -176,6 +176,7 @@ code {
     padding: 3px 5px;
     background-color: rgba(var(--text-color-max-contrast-rgb), 0.04) !important;
     border-radius: 5px;
+    font-size: 0.9em;
     font-family: monospace;
   }
 }
@@ -276,7 +277,7 @@ tbody tr:last-child {
     margin-bottom: 0.8em;
   }
 
-  @media (max-width: 1259px) {
+  @include media("<tablet") {
     margin-bottom: 2em;
     padding-left: 20px;
 
@@ -285,7 +286,7 @@ tbody tr:last-child {
     }
   }
 
-  @media (min-width: 1260px) {
+  @include media(">=tablet") {
     width: var(--sidenote-width);
     position: absolute;
     top: 0;
@@ -299,16 +300,6 @@ tbody tr:last-child {
       &::before {
         color: var(--accent-color);
       }
-    }
-
-    @media (max-width: 1390px) {
-      --sidenote-width: 220px;
-      --column-spacing: 50px;
-    }
-
-    @media (max-width: 1300px) {
-      --sidenote-width: 200px;
-      --column-spacing: 40px;
     }
   }
 }

@@ -53,6 +53,12 @@
   }
 
   @include media(">=tablet") {
+    --side-padding: 30px;
+    --column-spacing: 50px;
+    --sidenote-width: 180px;
+  }
+
+  @include media(">=desktop") {
     --side-padding: 60px;
     --column-spacing: 60px;
     --sidenote-width: 250px;

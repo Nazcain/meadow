@@ -3,11 +3,13 @@
 .columns {
   margin-bottom: 60px;
 
-  @include media("<tablet") {
-  }
-
   @include media(">=tablet") {
     display: grid;
+    gap: var(--side-padding);
+    grid-template-columns: 56% auto;
+  }
+
+  @include media(">=desktop") {
     gap: var(--column-spacing);
     grid-template-columns: 64.7% auto;
   }

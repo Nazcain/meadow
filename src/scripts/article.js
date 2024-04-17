@@ -1,3 +1,4 @@
+import { inter } from "@scripts/fontObserver"
 import lightGallery from "lightgallery"
 
 export function setupFootnotes() {
@@ -37,6 +38,52 @@ export function setupFootnotes() {
 
   if (footerFootnotes) {
     footerFootnotes.remove()
+  }
+
+  if (window.innerWidth >= 768) {
+    inter.load().then(() => {
+      repositionSidenotes()
+    })
+
+    window.addEventListener(
+      "resize",
+      debounce((e) => {
+        repositionSidenotes()
+      })
+    )
+  }
+}
+
+function repositionSidenotes() {
+  const sidenotes = document.querySelectorAll(".sidenote")
+
+  for (let i = 1; i < sidenotes.length; i++) {
+    const sidenote = sidenotes[i]
+    sidenote.style.top = 0
+
+    setTimeout(() => {
+      const prevSidenote = sidenotes[i - 1]
+      const rect = sidenote.getBoundingClientRect()
+      const prevRect = prevSidenote.getBoundingClientRect()
+      const offsetTop = rect.top + window.scrollY
+      const prevOffsetTop = prevRect.top + window.scrollY
+      const minMargin = 20
+      const overlap = prevOffsetTop + prevRect.height + minMargin - offsetTop
+
+      if (overlap > 0) {
+        sidenote.style.top = `${overlap}px`
+      }
+    }, 1)
+  }
+}
+
+function debounce(func) {
+  let timer
+  return function (event) {
+    if (timer) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(func, 100, event)
   }
 }
 
