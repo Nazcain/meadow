@@ -23,13 +23,21 @@ export async function getStaticPaths() {
 const {
   post: {
     Content,
-    frontmatter: { title, description, date, author, authorImage, authorUrl },
+    frontmatter: {
+      title,
+      description,
+      shortDescription,
+      date,
+      author,
+      authorImage,
+      authorUrl,
+    },
   },
   post,
 } = Astro.props
 ---
 
-<Layout title={title}>
+<Layout title={title} description={shortDescription}>
   <Article
     title={title}
     description={description}

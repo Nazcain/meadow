@@ -1,19 +1,21 @@
 ---
+import { SEO } from "astro-seo"
 import "@styles/main.scss"
 
-const { title } = Astro.props
+const { title, description } = Astro.props
+const seoDescription = description.replaceAll("_", "")
 ---
 
 <!doctype html>
 <html lang="en">
   <head>
+    <SEO title={title} description={seoDescription} />
     <meta charset="utf-8" />
     <link rel="icon" href="/favicon.ico" sizes="32x32" />
     <link rel="icon" href="/icon.svg" type="image/svg+xml" />
     <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>{title}</title>
     <link
       rel="alternate"
       type="application/rss+xml"
@@ -23,10 +25,9 @@ const { title } = Astro.props
   </head>
   <body>
     <slot />
+    <script>
+      import initThemes from "@scripts/initThemes"
+      initThemes()
+    </script>
   </body>
 </html>
-
-<script>
-  import initThemes from "@scripts/initThemes"
-  initThemes()
-</script>
