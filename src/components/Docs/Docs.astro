@@ -1,0 +1,15 @@
+---
+import styles from "./Docs.module.scss"
+
+const { links } = Astro.props
+---
+
+<ul class={styles.list}>
+  {
+    links.map(({ title, url }) => (
+      <li>
+        <a href={url}>{title}</a>
+      </li>
+    ))
+  }
+</ul>

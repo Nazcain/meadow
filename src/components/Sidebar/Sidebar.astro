@@ -2,9 +2,10 @@
 import Box from "@components/Box/Box.astro"
 import Download from "@components/Download/Download.astro"
 import Screenshots from "@components/Screenshots/Screenshots.astro"
+import Docs from "@components/Docs/Docs.astro"
 import styles from "./Sidebar.module.scss"
 
-const { aboutText, downloadLinks, screenshots } = Astro.props
+const { aboutText, downloadLinks, screenshots, docsLinks } = Astro.props
 ---
 
 <div class={styles.el}>
@@ -21,5 +22,8 @@ const { aboutText, downloadLinks, screenshots } = Astro.props
   </Box>
   <Box title="Screenshots">
     <Screenshots images={screenshots} />
+  </Box>
+  <Box title="Docs">
+    <Docs links={docsLinks} />
   </Box>
 </div>
