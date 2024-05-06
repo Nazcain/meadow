@@ -6,7 +6,7 @@
   @include media(">=tablet") {
     display: grid;
     gap: var(--side-padding);
-    grid-template-columns: 56% auto;
+    grid-template-columns: auto 250px;
   }
 
   @include media(">=desktop") {
