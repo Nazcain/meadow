@@ -2,18 +2,9 @@
 
 .el {
   display: flex;
+  flex-direction: column;
+  margin: 0 -15px;
   position: relative;
-
-  &::before {
-    content: "";
-    width: 1px;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: 50%;
-    background-color: rgba(var(--text-color-max-contrast-rgb), 0.1);
-    transition: opacity 0.15s;
-  }
 
   &:has(a:hover) {
     &::before {
@@ -25,11 +16,10 @@
 .link {
   flex: 1;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  gap: 6px;
-  padding: 11px 0 10px;
+  // justify-content: flex-end;
+  gap: 12px;
+  padding: 8px 15px;
   border-radius: 10px;
   color: var(--text-color-max-contrast);
   transition: background-color 0.15s;
@@ -40,14 +30,19 @@
 }
 
 .linkText {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 .icon {
-  width: 32px;
+  width: 20px;
 
   &_gitlab {
-    width: 30px;
-    margin-bottom: 2px;
+    width: 18px;
+    margin-left: 1px;
+  }
+
+  &_dmg {
+    width: 23px;
+    margin-left: -1px;
   }
 }
