@@ -13,28 +13,39 @@
   }
 }
 
-.link {
+.listItem {
   flex: 1;
   display: flex;
   align-items: center;
   // justify-content: flex-end;
   gap: 12px;
   padding: 8px 15px;
+  position: relative;
   border-radius: 10px;
   color: var(--text-color-max-contrast);
+  cursor: pointer;
+  user-select: none;
   transition: background-color 0.15s;
+
+  &:global(.-open) {
+    // filter: drop-shadow(0 5px 10px rgba(#000, 0.6));
+  }
 
   &:hover {
     background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
   }
 }
 
-.linkText {
+.listItemText {
+  position: relative;
+  z-index: 2;
   font-size: 14px;
 }
 
 .icon {
   width: 20px;
+  position: relative;
+  z-index: 2;
 
   &_gitlab {
     width: 18px;
@@ -44,5 +55,57 @@
   &_dmg {
     width: 23px;
     margin-left: -1px;
+  }
+}
+
+.listItemIcon {
+  opacity: 0.5;
+  width: 10px;
+  height: 7px;
+  margin-left: auto;
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.15s;
+
+  .listItem:not(:hover):not(:global(.-open)) & {
+    opacity: 0;
+  }
+}
+
+.dropdown {
+  visibility: hidden;
+  // opacity: 0;
+  width: 100%;
+  padding: 8px 5px 5px;
+  padding-top: calc(39px + 8px);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  // background-color: #ebebeb;
+  background-color: var(--body-bg-color);
+  // background-image: linear-gradient(to bottom, #ebebeb, #fff);
+  border-radius: 10px;
+  box-shadow: 0 15px 20px rgba(#000, 0.1);
+  font-size: 14px;
+  // transition: 0.15s;
+  // transition-property: visibility, opacity, transform;
+
+  :global(.-open) & {
+    visibility: visible;
+  }
+}
+
+.dropdownList {
+  list-style: none;
+}
+
+.dropdownListItem {
+  display: block;
+  padding: 8px 15px;
+  border-radius: 10px;
+
+  &:hover {
+    background-color: rgba(var(--text-color-max-contrast-rgb), 0.04);
   }
 }
