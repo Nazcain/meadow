@@ -51,6 +51,7 @@ a:not([class]):not(sup a),
     position: absolute;
     top: -0.1em;
     right: calc(var(--icon-padding) * -1);
+    font-weight: var(--base-font-weight);
     font-style: inherit;
     color: rgba(var(--text-color-max-contrast-rgb), 0.3);
     transition: color 0.15s;
@@ -63,6 +64,12 @@ a:not([class]):not(sup a),
 
     i {
       color: var(--link-color);
+    }
+  }
+
+  h3 & {
+    i {
+      top: 0;
     }
   }
 }
@@ -133,7 +140,8 @@ h3:not([class]) {
   font-weight: 700;
   line-height: 1.2;
 
-  h2 + & {
+  h2 + &,
+  h3 + & {
     margin-top: 1.8em;
   }
 
@@ -302,4 +310,12 @@ tbody tr:last-child {
       }
     }
   }
+}
+
+hr {
+  display: block;
+  height: 1px;
+  margin: 40px 0;
+  background-color: var(--border-color);
+  border: none;
 }
